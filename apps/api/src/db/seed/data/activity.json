@@ -1,0 +1,746 @@
+{
+  "_note": "Sample activity. Times are relative to when the seed runs (day 0 = today in Saudi time, hour = Saudi clock hour), so the demo always looks current. Statuses walk the real status machine and write status_events.",
+  "groups": [
+    {
+      "key": "group-wijaya",
+      "name": "Wijaya family",
+      "joinCode": "WJY-4821",
+      "leader": "pilgrim-ahmed",
+      "members": [
+        {
+          "user": "pilgrim-ahmed",
+          "role": "leader",
+          "relation": "son"
+        },
+        {
+          "user": "pilgrim-siti",
+          "relation": "mother",
+          "trackerTag": "AirTag · Ibu Siti"
+        },
+        {
+          "user": "pilgrim-nur",
+          "relation": "wife"
+        },
+        {
+          "user": "pilgrim-rizki",
+          "relation": "grandson"
+        }
+      ]
+    },
+    {
+      "key": "group-qureshi",
+      "name": "Qureshi Umrah group",
+      "joinCode": "QRS-7360",
+      "leader": "pilgrim-imran",
+      "members": [
+        {
+          "user": "pilgrim-imran",
+          "role": "leader"
+        },
+        {
+          "user": "pilgrim-fatima"
+        },
+        {
+          "user": "pilgrim-zainab",
+          "relation": "wife of leader"
+        },
+        {
+          "user": "pilgrim-usman"
+        },
+        {
+          "user": "pilgrim-ayesha"
+        },
+        {
+          "user": "pilgrim-tariq"
+        }
+      ]
+    }
+  ],
+  "locationPoints": [
+    {
+      "user": "pilgrim-siti",
+      "place": "gate-king-abdulaziz",
+      "minutesAgo": 18,
+      "source": "gps",
+      "accuracyM": 25
+    },
+    {
+      "user": "pilgrim-siti",
+      "place": "hotel-makkah-ibrahim-khalil",
+      "minutesAgo": 55,
+      "source": "gps",
+      "accuracyM": 15
+    },
+    {
+      "user": "pilgrim-ahmed",
+      "place": "hotel-makkah-ibrahim-khalil",
+      "minutesAgo": 4,
+      "source": "gps",
+      "accuracyM": 10
+    },
+    {
+      "user": "pilgrim-usman",
+      "place": "gathering-clock-tower",
+      "minutesAgo": 2900,
+      "source": "sms",
+      "accuracyM": 40
+    }
+  ],
+  "lostAlerts": [
+    {
+      "key": "alert-usman",
+      "user": "pilgrim-usman",
+      "group": "group-qureshi",
+      "channel": "sms",
+      "status": "resolved",
+      "place": "gathering-clock-tower",
+      "minutesAgo": 2900,
+      "resolvedAfterMinutes": 22,
+      "message": "I'm lost (sent by SMS)"
+    }
+  ],
+  "bookings": [
+    {
+      "key": "b01",
+      "pilgrim": "pilgrim-ahmed",
+      "service": "svc-jed-airport-makkah-van",
+      "day": -3,
+      "hour": 10,
+      "status": "completed",
+      "staff": "staff-khalid",
+      "pickup": "King Abdulaziz Airport, Hajj terminal",
+      "dropoff": "hotel-makkah-ibrahim-khalil"
+    },
+    {
+      "key": "b02",
+      "pilgrim": "pilgrim-ahmed",
+      "service": "svc-luggage-ship-home",
+      "day": 0,
+      "hour": 10,
+      "quantity": 3,
+      "status": "in_progress",
+      "staff": "staff-saeed"
+    },
+    {
+      "key": "b03",
+      "pilgrim": "pilgrim-fatima",
+      "service": "svc-luggage-storage",
+      "day": 0,
+      "hour": 8,
+      "quantity": 3,
+      "status": "in_progress",
+      "staff": "staff-omar"
+    },
+    {
+      "key": "b04",
+      "pilgrim": "pilgrim-mehmet",
+      "service": "svc-luggage-makkah-madinah",
+      "day": -5,
+      "hour": 7,
+      "quantity": 2,
+      "status": "completed",
+      "staff": "staff-saeed"
+    },
+    {
+      "key": "b05",
+      "pilgrim": "pilgrim-siti",
+      "service": "svc-wheelchair-hotel-gate",
+      "day": 1,
+      "hour": 3,
+      "status": "accepted",
+      "staff": "staff-hamza",
+      "meetingPoint": "Hotel lobby, main entrance",
+      "notes": "Uses a wheelchair; hard of hearing — please show the screen"
+    },
+    {
+      "key": "b06",
+      "pilgrim": "pilgrim-siti",
+      "service": "svc-companion-makkah",
+      "day": -1,
+      "hour": 9,
+      "quantity": 2,
+      "status": "completed",
+      "staff": "staff-hamza",
+      "meetingPoint": "Hotel lobby"
+    },
+    {
+      "key": "b07",
+      "pilgrim": "pilgrim-fatima",
+      "service": "svc-umrah-guide-urdu",
+      "day": 1,
+      "hour": 21,
+      "status": "paid",
+      "meetingPoint": "King Abdulaziz Gate (1)"
+    },
+    {
+      "key": "b08",
+      "pilgrim": "pilgrim-mehmet",
+      "service": "svc-madinah-airport-hotel",
+      "day": -5,
+      "hour": 12,
+      "status": "paid_out"
+    },
+    {
+      "key": "b09",
+      "pilgrim": "pilgrim-sarah",
+      "service": "svc-madinah-airport-hotel",
+      "day": -1,
+      "hour": 16,
+      "status": "completed"
+    },
+    {
+      "key": "b10",
+      "pilgrim": "pilgrim-sarah",
+      "service": "svc-heritage-quba-uhud",
+      "day": 2,
+      "hour": 7,
+      "status": "paid"
+    },
+    {
+      "key": "b11",
+      "pilgrim": "pilgrim-aisyah",
+      "service": "svc-jed-airport-makkah-van",
+      "day": 0,
+      "hour": 14,
+      "status": "accepted",
+      "staff": "staff-khalid",
+      "pickup": "King Abdulaziz Airport, North terminal",
+      "dropoff": "hotel-makkah-ajyad"
+    },
+    {
+      "key": "b12",
+      "pilgrim": "pilgrim-aisyah",
+      "service": "svc-photo-session-hotel",
+      "day": 2,
+      "hour": 9,
+      "status": "refunded",
+      "via": "cancelled",
+      "reason": "Pilgrim cancelled more than 24 hours before"
+    },
+    {
+      "key": "b13",
+      "pilgrim": "pilgrim-abdullah",
+      "service": "svc-photo-family",
+      "day": -2,
+      "hour": 16,
+      "status": "completed"
+    },
+    {
+      "key": "b14",
+      "pilgrim": "pilgrim-abdullah",
+      "service": "svc-makkah-haram-shuttle",
+      "day": 1,
+      "hour": 11,
+      "quantity": 2,
+      "status": "paid"
+    },
+    {
+      "key": "b15",
+      "pilgrim": "pilgrim-imran",
+      "service": "svc-photo-group",
+      "day": 3,
+      "hour": 16,
+      "status": "accepted"
+    },
+    {
+      "key": "b16",
+      "pilgrim": "pilgrim-imran",
+      "service": "svc-heritage-urdu",
+      "day": 2,
+      "hour": 7,
+      "quantity": 6,
+      "status": "paid"
+    },
+    {
+      "key": "b17",
+      "pilgrim": "pilgrim-ahmed",
+      "service": "svc-umrah-guide-indonesian",
+      "day": -2,
+      "hour": 4,
+      "status": "completed",
+      "staff": "staff-bilal"
+    },
+    {
+      "key": "b18",
+      "pilgrim": "pilgrim-fatima",
+      "service": "svc-makkah-jed-airport-van",
+      "day": 6,
+      "hour": 8,
+      "status": "paid"
+    },
+    {
+      "key": "b19",
+      "pilgrim": "pilgrim-mehmet",
+      "service": "svc-companion-madinah",
+      "day": 0,
+      "hour": 12,
+      "status": "refunded",
+      "via": "declined",
+      "reason": "Provider has no Turkish-speaking companion free"
+    },
+    {
+      "key": "b20",
+      "pilgrim": "pilgrim-ahmed",
+      "service": "svc-tracker-tag-rental",
+      "day": -2,
+      "hour": 12,
+      "options": [
+        "deposit"
+      ],
+      "status": "completed"
+    }
+  ],
+  "bags": [
+    {
+      "tagCode": "RFQ-7Q4K2M",
+      "booking": "b02",
+      "label": "Blue suitcase",
+      "status": "delivered",
+      "scans": [
+        [
+          "hotel_lobby",
+          "staff-saeed",
+          -180
+        ],
+        [
+          "van",
+          "staff-saeed",
+          -165
+        ],
+        [
+          "shipping_depot",
+          "staff-omar",
+          -95
+        ]
+      ]
+    },
+    {
+      "tagCode": "RFQ-9H3T8W",
+      "booking": "b02",
+      "label": "Black suitcase",
+      "status": "in_transit",
+      "expectNextScanInMinutes": 120,
+      "scans": [
+        [
+          "hotel_lobby",
+          "staff-saeed",
+          -180
+        ],
+        [
+          "van",
+          "staff-saeed",
+          -165
+        ]
+      ]
+    },
+    {
+      "tagCode": "RFQ-2X6P5D",
+      "booking": "b02",
+      "label": "Zamzam carton",
+      "status": "overdue",
+      "lostCase": true,
+      "expectNextScanInMinutes": -60,
+      "scans": [
+        [
+          "hotel_lobby",
+          "staff-saeed",
+          -180
+        ]
+      ]
+    },
+    {
+      "tagCode": "RFQ-4M8N7C",
+      "booking": "b03",
+      "label": "Green duffel",
+      "status": "stored",
+      "scans": [
+        [
+          "hotel_lobby",
+          "staff-omar",
+          -300
+        ],
+        [
+          "storage_room",
+          "staff-omar",
+          -280
+        ]
+      ]
+    },
+    {
+      "tagCode": "RFQ-6J2V9R",
+      "booking": "b03",
+      "label": "Grey suitcase",
+      "status": "stored",
+      "scans": [
+        [
+          "hotel_lobby",
+          "staff-omar",
+          -300
+        ],
+        [
+          "storage_room",
+          "staff-omar",
+          -280
+        ]
+      ]
+    },
+    {
+      "tagCode": "RFQ-8B5Z3L",
+      "booking": "b03",
+      "label": "Small backpack",
+      "status": "stored",
+      "scans": [
+        [
+          "hotel_lobby",
+          "staff-omar",
+          -300
+        ],
+        [
+          "storage_room",
+          "staff-omar",
+          -279
+        ]
+      ]
+    },
+    {
+      "tagCode": "RFQ-3F7Y6S",
+      "booking": "b04",
+      "label": "Red suitcase",
+      "status": "delivered",
+      "scans": [
+        [
+          "hotel_lobby",
+          "staff-saeed",
+          -7200
+        ],
+        [
+          "van",
+          "staff-saeed",
+          -7190
+        ],
+        [
+          "madinah_hotel_lobby",
+          "staff-saeed",
+          -6900
+        ]
+      ]
+    },
+    {
+      "tagCode": "RFQ-5K9W4G",
+      "booking": "b04",
+      "label": "Brown bag",
+      "status": "delivered",
+      "scans": [
+        [
+          "hotel_lobby",
+          "staff-saeed",
+          -7200
+        ],
+        [
+          "van",
+          "staff-saeed",
+          -7189
+        ],
+        [
+          "madinah_hotel_lobby",
+          "staff-saeed",
+          -6899
+        ]
+      ]
+    }
+  ],
+  "orders": [
+    {
+      "key": "o01",
+      "pilgrim": "pilgrim-ahmed",
+      "shop": "sample-makkah-gifts",
+      "delivery": "hotel",
+      "items": [
+        [
+          "p-prayer-mat",
+          2
+        ],
+        [
+          "p-misbaha-wood",
+          5
+        ]
+      ],
+      "status": "delivered",
+      "daysAgo": 2
+    },
+    {
+      "key": "o02",
+      "pilgrim": "pilgrim-fatima",
+      "shop": "sample-attar",
+      "delivery": "hotel",
+      "items": [
+        [
+          "p-attar-gift-set",
+          1
+        ]
+      ],
+      "status": "out_for_delivery",
+      "daysAgo": 0
+    },
+    {
+      "key": "o03",
+      "pilgrim": "pilgrim-mehmet",
+      "shop": "sample-dates-house",
+      "delivery": "hotel",
+      "items": [
+        [
+          "p-dates-ajwa-1kg",
+          1
+        ],
+        [
+          "p-dates-mixed-3kg",
+          1
+        ]
+      ],
+      "status": "delivered",
+      "daysAgo": 3
+    },
+    {
+      "key": "o04",
+      "pilgrim": "pilgrim-sarah",
+      "shop": "sample-madinah-souvenirs",
+      "delivery": "international",
+      "country": "GB",
+      "items": [
+        [
+          "p-madinah-scarf",
+          2
+        ],
+        [
+          "p-madinah-book",
+          1
+        ]
+      ],
+      "status": "shipped",
+      "shippingHalalas": 9500,
+      "courier": "Sample courier",
+      "trackingNumber": "SAMPLE-0000001",
+      "daysAgo": 1
+    },
+    {
+      "key": "o05",
+      "pilgrim": "pilgrim-aisyah",
+      "shop": "sample-makkah-gifts",
+      "delivery": "international",
+      "country": "MY",
+      "items": [
+        [
+          "p-makkah-gift-box",
+          1
+        ]
+      ],
+      "status": "paid",
+      "shippingHalalas": 8500,
+      "daysAgo": 0
+    },
+    {
+      "key": "o06",
+      "pilgrim": "pilgrim-abdullah",
+      "shop": "sample-dates-house",
+      "delivery": "international",
+      "country": "EG",
+      "items": [
+        [
+          "p-dates-ajwa-1kg",
+          2
+        ]
+      ],
+      "status": "packed",
+      "shippingHalalas": 7000,
+      "daysAgo": 1
+    },
+    {
+      "key": "o07",
+      "pilgrim": "pilgrim-imran",
+      "shop": "sample-makkah-gifts",
+      "delivery": "hotel",
+      "items": [
+        [
+          "p-ihram-set",
+          1
+        ]
+      ],
+      "status": "refunded",
+      "daysAgo": 1
+    },
+    {
+      "key": "o08",
+      "pilgrim": "pilgrim-fatima",
+      "shop": "sample-dates-house",
+      "delivery": "international",
+      "country": "PK",
+      "items": [
+        [
+          "p-dates-madinah-1kg",
+          3
+        ],
+        [
+          "p-dates-gift-tray",
+          1
+        ]
+      ],
+      "status": "delivered",
+      "shippingHalalas": 12000,
+      "courier": "Sample courier",
+      "trackingNumber": "SAMPLE-0000002",
+      "daysAgo": 6
+    },
+    {
+      "key": "o09",
+      "pilgrim": "pilgrim-mehmet",
+      "shop": "sample-madinah-souvenirs",
+      "delivery": "hotel",
+      "items": [
+        [
+          "p-madinah-misbaha-stone",
+          3
+        ]
+      ],
+      "status": "cancelled",
+      "daysAgo": 2
+    },
+    {
+      "key": "o10",
+      "pilgrim": "pilgrim-sarah",
+      "shop": "sample-dates-house",
+      "delivery": "hotel",
+      "items": [
+        [
+          "p-dates-chocolate",
+          1
+        ],
+        [
+          "p-dates-almond",
+          1
+        ]
+      ],
+      "status": "paid",
+      "giftWrap": true,
+      "giftMessage": "For Mum, with love from Madinah",
+      "daysAgo": 0
+    }
+  ],
+  "reviews": [
+    {
+      "author": "pilgrim-ahmed",
+      "booking": "b01",
+      "rating": 5,
+      "language": "id",
+      "text": "Sopir menunggu di kedatangan dan membantu semua koper. Sangat membantu."
+    },
+    {
+      "author": "pilgrim-siti",
+      "booking": "b06",
+      "rating": 5,
+      "language": "id",
+      "text": "Pendampingnya sabar dan bicara pelan. Terima kasih."
+    },
+    {
+      "author": "pilgrim-mehmet",
+      "booking": "b08",
+      "rating": 4,
+      "language": "tr",
+      "text": "Zamanında geldi, araç temizdi."
+    },
+    {
+      "author": "pilgrim-abdullah",
+      "booking": "b13",
+      "rating": 5,
+      "language": "ar",
+      "text": "صور جميلة وتعامل راقٍ."
+    },
+    {
+      "author": "pilgrim-ahmed",
+      "booking": "b17",
+      "rating": 5,
+      "language": "id",
+      "text": "Pembimbing menjelaskan setiap langkah umrah dengan jelas."
+    },
+    {
+      "author": "pilgrim-mehmet",
+      "order": "o03",
+      "rating": 5,
+      "language": "tr",
+      "text": "Hurmalar taze ve iyi paketlenmiş."
+    }
+  ],
+  "content": [
+    {
+      "key": "banner-luggage",
+      "kind": "banner",
+      "link": "rafeeq://services?category=luggage",
+      "title": {
+        "en": "Travel light: we take your bags to the airport",
+        "ar": "سافر بخفة: ننقل أمتعتك إلى المطار",
+        "ur": "ہلکے سفر کریں: ہم آپ کا سامان ایئرپورٹ پہنچائیں گے",
+        "id": "Bepergian ringan: koper Anda kami antar ke bandara",
+        "ms": "Kembara ringan: beg anda kami hantar ke lapangan terbang",
+        "tr": "Hafif seyahat edin: bavullarınızı havalimanına biz götürelim"
+      },
+      "body": {
+        "en": "Every handover is scanned and shown in the app."
+      }
+    },
+    {
+      "key": "banner-dates",
+      "kind": "banner",
+      "link": "rafeeq://shop?section=dates",
+      "title": {
+        "en": "Madinah dates, delivered to your hotel or home",
+        "ar": "تمور المدينة إلى فندقك أو بيتك",
+        "ur": "مدینہ کی کھجوریں ہوٹل یا گھر تک",
+        "id": "Kurma Madinah, diantar ke hotel atau rumah",
+        "ms": "Kurma Madinah, dihantar ke hotel atau rumah",
+        "tr": "Medine hurması, otelinize veya evinize"
+      }
+    },
+    {
+      "key": "banner-wheelchair",
+      "kind": "banner",
+      "link": "rafeeq://services?category=accessibility",
+      "title": {
+        "en": "Wheelchair help from your hotel to the Haram",
+        "ar": "مساعدة بالكرسي المتحرك من فندقك إلى الحرم",
+        "ur": "ہوٹل سے حرم تک وہیل چیئر مدد",
+        "id": "Bantuan kursi roda dari hotel ke Masjidil Haram",
+        "ms": "Bantuan kerusi roda dari hotel ke Masjidil Haram",
+        "tr": "Otelinizden Harem'e tekerlekli sandalye yardımı"
+      }
+    },
+    {
+      "key": "help-lost",
+      "kind": "help",
+      "title": {
+        "en": "If you get separated from your group",
+        "ar": "إذا انفصلت عن مجموعتك",
+        "ur": "اگر آپ اپنے گروپ سے بچھڑ جائیں",
+        "id": "Jika terpisah dari rombongan",
+        "ms": "Jika terpisah daripada kumpulan",
+        "tr": "Grubunuzdan ayrılırsanız"
+      },
+      "body": {
+        "en": "Press \"I'm lost\" on the home screen. Rafeeq sends your location to your group, by SMS if there is no internet. Stay where you are, or walk to the nearest lost-and-found office shown on the map.",
+        "ar": "اضغط \"أنا تائه\" في الشاشة الرئيسية. يرسل رفيق موقعك إلى مجموعتك، برسالة نصية إن لم يتوفر الإنترنت. ابقَ مكانك أو توجّه إلى أقرب مكتب مفقودات على الخريطة.",
+        "id": "Tekan \"Saya tersesat\" di layar utama. Rafeeq mengirim lokasi Anda ke rombongan, lewat SMS jika tidak ada internet. Tetap di tempat, atau berjalan ke kantor barang hilang terdekat di peta."
+      }
+    },
+    {
+      "key": "help-refunds",
+      "kind": "help",
+      "title": {
+        "en": "Cancellations and refunds",
+        "ar": "الإلغاء والاسترداد",
+        "id": "Pembatalan dan pengembalian dana"
+      },
+      "body": {
+        "en": "Each service shows its cancellation policy before you pay. Refunds go back to the card or wallet you paid with. If a provider declines, you get a full refund and similar options.",
+        "ar": "تعرض كل خدمة سياسة الإلغاء قبل الدفع. يُعاد المبلغ إلى البطاقة أو المحفظة التي دفعت بها. إذا رفض مقدم الخدمة، تسترد المبلغ كاملاً مع خيارات مشابهة."
+      }
+    }
+  ]
+}

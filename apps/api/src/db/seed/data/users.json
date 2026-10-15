@@ -1,0 +1,370 @@
+{
+  "_note": "Sample people. All names and phone numbers are invented. Test phones use the +966 500 000 0xx range; with DEMO_MODE=true every one logs in with DEMO_OTP_CODE.",
+  "users": [
+    {
+      "key": "admin-ops",
+      "phone": "+966500000001",
+      "name": "Bidec Operations (demo)",
+      "language": "en",
+      "role": "admin_ops"
+    },
+    {
+      "key": "admin-finance",
+      "phone": "+966500000002",
+      "name": "Bidec Finance (demo)",
+      "language": "en",
+      "role": "admin_finance"
+    },
+    {
+      "key": "admin-support",
+      "phone": "+966500000003",
+      "name": "Bidec Support (demo)",
+      "language": "ar",
+      "role": "admin_support"
+    },
+    {
+      "key": "owner-transport",
+      "phone": "+966500000010",
+      "name": "Faisal Al-Harbi",
+      "language": "ar",
+      "role": "provider_owner"
+    },
+    {
+      "key": "owner-transport-madinah",
+      "phone": "+966500000011",
+      "name": "Majed Al-Juhani",
+      "language": "ar",
+      "role": "provider_owner"
+    },
+    {
+      "key": "owner-guides-makkah",
+      "phone": "+966500000012",
+      "name": "Sami Al-Ghamdi",
+      "language": "ar",
+      "role": "provider_owner"
+    },
+    {
+      "key": "owner-photo",
+      "phone": "+966500000013",
+      "name": "Nawaf Al-Otaibi",
+      "language": "en",
+      "role": "provider_owner"
+    },
+    {
+      "key": "owner-luggage",
+      "phone": "+966500000014",
+      "name": "Turki Al-Zahrani",
+      "language": "ar",
+      "role": "provider_owner"
+    },
+    {
+      "key": "owner-care",
+      "phone": "+966500000015",
+      "name": "Huda Al-Shehri",
+      "language": "ar",
+      "role": "provider_owner"
+    },
+    {
+      "key": "owner-access-transport",
+      "phone": "+966500000016",
+      "name": "Ibrahim Al-Qahtani",
+      "language": "ar",
+      "role": "provider_owner"
+    },
+    {
+      "key": "owner-guides-madinah",
+      "phone": "+966500000017",
+      "name": "Anas Al-Madani",
+      "language": "ar",
+      "role": "provider_owner"
+    },
+    {
+      "key": "owner-dates-house",
+      "phone": "+966500000018",
+      "name": "Abdulrahman Al-Ansari",
+      "language": "ar",
+      "role": "provider_owner"
+    },
+    {
+      "key": "owner-makkah-gifts",
+      "phone": "+966500000019",
+      "name": "Waleed Al-Makki",
+      "language": "ar",
+      "role": "provider_owner"
+    },
+    {
+      "key": "owner-madinah-souvenirs",
+      "phone": "+966500000020",
+      "name": "Rayan Al-Awfi",
+      "language": "ar",
+      "role": "provider_owner"
+    },
+    {
+      "key": "owner-attar",
+      "phone": "+966500000021",
+      "name": "Hassan Al-Attar",
+      "language": "ar",
+      "role": "provider_owner"
+    },
+    {
+      "key": "staff-khalid",
+      "phone": "+966500000030",
+      "name": "Khalid (driver)",
+      "language": "ar",
+      "role": "staff"
+    },
+    {
+      "key": "staff-yousef",
+      "phone": "+966500000031",
+      "name": "Yousef (accessible van driver)",
+      "language": "ar",
+      "role": "staff"
+    },
+    {
+      "key": "staff-bilal",
+      "phone": "+966500000032",
+      "name": "Bilal (guide)",
+      "language": "ur",
+      "role": "staff"
+    },
+    {
+      "key": "staff-saeed",
+      "phone": "+966500000033",
+      "name": "Saeed (luggage)",
+      "language": "ar",
+      "role": "staff"
+    },
+    {
+      "key": "staff-omar",
+      "phone": "+966500000034",
+      "name": "Omar (luggage)",
+      "language": "ar",
+      "role": "staff"
+    },
+    {
+      "key": "staff-hamza",
+      "phone": "+966500000035",
+      "name": "Hamza (companion)",
+      "language": "ar",
+      "role": "staff"
+    },
+    {
+      "key": "pilgrim-ahmed",
+      "phone": "+966500000050",
+      "name": "Ahmed Wijaya",
+      "language": "id",
+      "nationality": "ID",
+      "city": "makkah",
+      "hotel": "hotel-makkah-ibrahim-khalil",
+      "travelDays": [
+        -3,
+        9
+      ],
+      "locationSharing": true
+    },
+    {
+      "key": "pilgrim-fatima",
+      "phone": "+966500000051",
+      "name": "Fatima Khan",
+      "language": "ur",
+      "nationality": "PK",
+      "city": "makkah",
+      "hotel": "hotel-makkah-ajyad",
+      "travelDays": [
+        -2,
+        12
+      ],
+      "locationSharing": true
+    },
+    {
+      "key": "pilgrim-mehmet",
+      "phone": "+966500000052",
+      "name": "Mehmet Yılmaz",
+      "language": "tr",
+      "nationality": "TR",
+      "city": "madinah",
+      "hotel": "hotel-madinah-central",
+      "travelDays": [
+        -5,
+        4
+      ]
+    },
+    {
+      "key": "pilgrim-aisyah",
+      "phone": "+966500000053",
+      "name": "Aisyah Rahman",
+      "language": "ms",
+      "nationality": "MY",
+      "city": "makkah",
+      "hotel": "hotel-makkah-ajyad",
+      "travelDays": [
+        0,
+        10
+      ]
+    },
+    {
+      "key": "pilgrim-sarah",
+      "phone": "+966500000054",
+      "name": "Sarah Ahmed",
+      "language": "en",
+      "nationality": "GB",
+      "city": "madinah",
+      "hotel": "hotel-madinah-central",
+      "travelDays": [
+        -1,
+        7
+      ]
+    },
+    {
+      "key": "pilgrim-abdullah",
+      "phone": "+966500000055",
+      "name": "Abdullah Mostafa",
+      "language": "ar",
+      "nationality": "EG",
+      "city": "makkah",
+      "hotel": "hotel-makkah-ibrahim-khalil",
+      "travelDays": [
+        -4,
+        6
+      ]
+    },
+    {
+      "key": "pilgrim-siti",
+      "phone": "+966500000056",
+      "name": "Siti Aminah",
+      "language": "id",
+      "nationality": "ID",
+      "city": "makkah",
+      "hotel": "hotel-makkah-ibrahim-khalil",
+      "travelDays": [
+        -3,
+        9
+      ],
+      "accessibilityMode": true,
+      "accessibilityNeeds": [
+        "wheelchair",
+        "hard_of_hearing"
+      ],
+      "_note": "Elderly user (Ahmed's mother) with accessibility mode on",
+      "locationSharing": true
+    },
+    {
+      "key": "pilgrim-nur",
+      "phone": "+966500000057",
+      "name": "Nur Hidayah",
+      "language": "id",
+      "nationality": "ID",
+      "city": "makkah",
+      "hotel": "hotel-makkah-ibrahim-khalil",
+      "travelDays": [
+        -3,
+        9
+      ],
+      "locationSharing": true
+    },
+    {
+      "key": "pilgrim-rizki",
+      "phone": "+966500000058",
+      "name": "Rizki Wijaya",
+      "language": "id",
+      "nationality": "ID",
+      "city": "makkah",
+      "hotel": "hotel-makkah-ibrahim-khalil",
+      "travelDays": [
+        -3,
+        9
+      ],
+      "locationSharing": true
+    },
+    {
+      "key": "pilgrim-imran",
+      "phone": "+966500000060",
+      "name": "Imran Qureshi",
+      "language": "ur",
+      "nationality": "PK",
+      "city": "makkah",
+      "hotel": "hotel-makkah-ajyad",
+      "travelDays": [
+        -2,
+        12
+      ],
+      "locationSharing": true
+    },
+    {
+      "key": "pilgrim-zainab",
+      "phone": "+966500000061",
+      "name": "Zainab Qureshi",
+      "language": "ur",
+      "nationality": "PK",
+      "city": "makkah",
+      "hotel": "hotel-makkah-ajyad",
+      "travelDays": [
+        -2,
+        12
+      ],
+      "locationSharing": true
+    },
+    {
+      "key": "pilgrim-usman",
+      "phone": "+966500000062",
+      "name": "Usman Ali",
+      "language": "ur",
+      "nationality": "PK",
+      "city": "makkah",
+      "hotel": "hotel-makkah-ajyad",
+      "travelDays": [
+        -2,
+        12
+      ],
+      "locationSharing": true
+    },
+    {
+      "key": "pilgrim-ayesha",
+      "phone": "+966500000063",
+      "name": "Ayesha Malik",
+      "language": "ur",
+      "nationality": "PK",
+      "city": "makkah",
+      "hotel": "hotel-makkah-ajyad",
+      "travelDays": [
+        -2,
+        12
+      ],
+      "locationSharing": true
+    },
+    {
+      "key": "pilgrim-tariq",
+      "phone": "+966500000064",
+      "name": "Tariq Hussain",
+      "language": "en",
+      "nationality": "PK",
+      "city": "makkah",
+      "hotel": "hotel-makkah-ajyad",
+      "travelDays": [
+        -2,
+        12
+      ],
+      "locationSharing": true
+    }
+  ],
+  "emergencyContacts": [
+    {
+      "user": "pilgrim-siti",
+      "name": "Ahmed Wijaya",
+      "phone": "+966500000050",
+      "relation": "son"
+    },
+    {
+      "user": "pilgrim-siti",
+      "name": "Rina (daughter, Jakarta)",
+      "phone": "+628000000001",
+      "relation": "daughter"
+    },
+    {
+      "user": "pilgrim-fatima",
+      "name": "Imran Qureshi",
+      "phone": "+966500000060",
+      "relation": "group leader"
+    }
+  ]
+}

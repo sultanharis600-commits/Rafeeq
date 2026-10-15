@@ -1,0 +1,31 @@
+@import 'tailwindcss';
+
+/* Rafeeq design tokens (same values as packages/shared/src/design.ts and the Flutter theme). */
+@theme {
+  --color-brand-900: #063d3a;
+  --color-brand-700: #0b5d57;
+  --color-brand-500: #128c7e;
+  --color-brand-100: #d7efeb;
+  --color-sand-100: #f7f1e6;
+  --color-sand-300: #e8dcc4;
+  --color-gold-500: #c9a227;
+  --color-ink-900: #1c2421;
+  --color-ink-600: #4b5754;
+  --font-sans: 'Inter', 'IBM Plex Sans Arabic', system-ui, sans-serif;
+  --font-arabic: 'IBM Plex Sans Arabic', 'Inter', system-ui, sans-serif;
+}
+
+html {
+  font-size: 16px; /* body text at least 16 px (AI_RULES.md) */
+}
+html[dir='rtl'] body {
+  font-family: var(--font-arabic);
+}
+body {
+  background: var(--color-sand-100);
+  color: var(--color-ink-900);
+}
+:focus-visible {
+  outline: 3px solid var(--color-gold-500);
+  outline-offset: 2px;
+}

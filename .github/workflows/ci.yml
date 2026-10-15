@@ -1,0 +1,96 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  node:
+    name: API, web and shared
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: rafeeq
+          POSTGRES_PASSWORD: rafeeq
+          POSTGRES_DB: rafeeq
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U rafeeq"
+          --health-interval 5s
+          --health-retries 10
+    env:
+      DATABASE_URL: postgresql://rafeeq:rafeeq@localhost:5432/rafeeq
+      DEMO_MODE: "true"
+      NODE_ENV: test
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Build shared package
+        run: npm run build -w packages/shared
+      - name: Lint
+        run: npm run lint
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Unit tests
+        run: npm test
+      - name: Migrations are up to date with the schema
+        working-directory: apps/api
+        run: |
+          npx drizzle-kit generate --name ci_check
+          if [ -n "$(git status --porcelain drizzle)" ]; then
+            echo "::error::schema.ts changed without a migration. Run 'npm run db:generate -w apps/api' and commit drizzle/."
+            git status --porcelain drizzle
+            exit 1
+          fi
+      - name: Apply migrations
+        run: npm run db:migrate -w apps/api
+      - name: Seed sample data
+        run: npm run seed -w apps/api
+      - name: Integration tests
+        run: npm run test:e2e -w apps/api
+      - name: Build API and web
+        run: npm run build
+      - name: OpenAPI is up to date
+        working-directory: apps/api
+        run: |
+          npm run openapi
+          git diff --exit-code openapi.json || (echo "::error::Run 'npm run openapi -w apps/api' and commit openapi.json." && exit 1)
+
+  mobile:
+    name: Flutter app
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/mobile
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+      - name: Translations are generated from tool/strings.py
+        run: |
+          python3 tool/strings.py
+          git diff --exit-code lib/l10n || (echo "::error::Run 'python3 tool/strings.py' in apps/mobile and commit lib/l10n." && exit 1)
+      - name: Create platform folders if missing
+        run: |
+          if [ ! -d android ]; then
+            flutter create . --project-name rafeeq --org sa.bidec --platforms android,ios
+          fi
+          python3 tool/configure_platforms.py
+      - run: flutter pub get
+      - run: flutter gen-l10n
+      - run: flutter analyze --no-fatal-infos
+      - run: flutter test

@@ -1,0 +1,610 @@
+{
+  "@@locale": "en",
+  "accessibilityMode": "Accessibility mode",
+  "accessibilityModeHint": "Bigger text and buttons, fewer items, voice guidance",
+  "addContact": "Add contact",
+  "addToCart": "Add to cart",
+  "addedToCart": "Added to cart",
+  "address": "Address",
+  "agree": "I agree",
+  "alertFrom": "{name} pressed “I'm lost” {age}",
+  "@alertFrom": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "age": {
+        "type": "String"
+      }
+    }
+  },
+  "all": "All",
+  "ambulance997": "Red Crescent ambulance: 997",
+  "appName": "Rafeeq",
+  "arrivesIn": "Arrives in about",
+  "asr": "Asr",
+  "back": "Back",
+  "bag": "Bag",
+  "bagCaseOpen": "This bag missed a handover. The provider and Bidec support are looking for it and will contact you.",
+  "bagLabelHint": "e.g. Blue suitcase",
+  "bagLabelOptional": "Bag description (optional)",
+  "bagReported": "Reported. We will contact you.",
+  "booking": "Booking",
+  "call": "Call",
+  "callName": "Call {name}",
+  "@callName": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "cancel": "Cancel",
+  "cancelBooking": "Cancel booking",
+  "cancelNoRefund": "This cancellation is not refunded under the provider's policy.",
+  "cancelOrder": "Cancel order",
+  "cancelRefund": "You will get {amount} back.",
+  "@cancelRefund": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "cancellation": "Cancellation",
+  "cart": "Cart",
+  "cartEmpty": "Your cart is empty",
+  "catAccessibility": "Accessibility help",
+  "catGuides": "Guides",
+  "catHeritage": "Heritage tours",
+  "catLuggage": "Luggage",
+  "catPhotography": "Photography",
+  "catTransport": "Transport",
+  "changeNumber": "Change number",
+  "chooseLanguage": "Choose your language",
+  "chooseTime": "Choose a time",
+  "city": "City",
+  "close": "Close",
+  "code": "Code",
+  "completeJob": "Complete job",
+  "completeJobConfirm": "Mark this job as completed?",
+  "confirm": "Confirm",
+  "continueButton": "Continue",
+  "continueToPay": "Continue to payment",
+  "countryCode": "Country",
+  "countryHint": "Two-letter code, e.g. ID, PK, TR",
+  "create": "Create",
+  "createGroup": "Create a group",
+  "customsNote": "Customs fees may apply in your country.",
+  "dataCopied": "Your data was copied. Paste it into a note or email to keep it.",
+  "days": "{count, plural, =1{1 day} other{{count} days}}",
+  "@days": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "declinedRefunded": "The provider couldn't take this booking. Your money has been refunded in full.",
+  "delete": "Delete",
+  "deleteAccount": "Delete my account",
+  "deleteAccountWarning": "Your profile, locations, contacts and groups are deleted. Paid bookings are kept without your name for invoices. This can't be undone.",
+  "deliverTo": "Deliver to",
+  "delivery": "Delivery",
+  "demoCode": "Demo code: {code}",
+  "@demoCode": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "demoShort": "DEMO",
+  "dhuhr": "Dhuhr",
+  "downloadMyData": "Download my data",
+  "dropoff": "Drop-off",
+  "duration": "Duration",
+  "emergency911": "Emergency (police, fire, ambulance): 911",
+  "emergencyContacts": "Emergency contacts",
+  "emergencyContactsHint": "They get an SMS with your location if you press “I'm lost”.",
+  "errCannotCancel": "This booking can no longer be cancelled. Use “Report a problem”.",
+  "errCodeExpired": "The code has expired. Ask for a new one.",
+  "errCountry": "Some items can't be shipped to that country.",
+  "errEmail": "Enter a valid email address",
+  "errGeneric": "Something went wrong ({code}). Please try again.",
+  "@errGeneric": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "errGroupCode": "No group with that code. Check it and try again.",
+  "errHoldExpired": "The 10-minute hold ended. Choose the time again.",
+  "errNoConsent": "Turn on “Share my location” in Profile first.",
+  "errNoGroup": "Join a travel group first.",
+  "errNoHotel": "Choose your hotel in Profile first.",
+  "errOffline": "No internet connection. Showing what is saved on your phone.",
+  "errOneShop": "An order can only have items from one shop.",
+  "errOutOfStock": "Not enough in stock. Lower the quantity.",
+  "errPhone": "Enter the number with the country code, starting with +",
+  "errReviewed": "You have already reviewed this.",
+  "errSlotFull": "That time has just been taken. Choose another.",
+  "errTestCard": "Use a test card: 4111 1111 1111 1111",
+  "errTooMany": "Too many tries. Wait a few minutes and try again.",
+  "errWrongCode": "Wrong code. Check the SMS and try again.",
+  "extras": "Extras",
+  "fajr": "Fajr",
+  "findName": "Find {name}",
+  "@findName": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "findNearby": "Find nearby",
+  "finderAbout": "About {metres} m away",
+  "@finderAbout": {
+    "placeholders": {
+      "metres": {
+        "type": "int"
+      }
+    }
+  },
+  "finderBluetoothOff": "Turn on Bluetooth to search.",
+  "finderColder": "Colder",
+  "finderHint": "Walk slowly and watch the circle. Red means you are getting closer.",
+  "finderNoMember": "This person is not in your travel group.",
+  "finderNote": "Bluetooth works up to about 30–50 m and needs no internet. Crowds weaken the signal.",
+  "finderPermission": "Allow Bluetooth and location in your phone settings to use the finder.",
+  "finderSame": "Nearby",
+  "finderSearching": "Searching…",
+  "finderWarmer": "Warmer",
+  "free": "Free",
+  "giftMessage": "Message card",
+  "giftWrap": "Gift wrap (10 SAR)",
+  "groupIntro": "Join your family or group so you can find each other if someone gets lost.",
+  "groupName": "Group name",
+  "handoverPoint": "Where is the handover?",
+  "hasNeeds": "Pilgrim needs help (see job)",
+  "hasSteps": "Has steps",
+  "heldBy": "held by {name}",
+  "@heldBy": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "helloName": "Hello, {name}",
+  "@helloName": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "help": "Help",
+  "helpArticles": "Questions and answers",
+  "history": "History",
+  "hoAirport": "At the airport",
+  "hoCheckedIn": "Checked in",
+  "hoDepot": "At the shipping depot",
+  "hoHanded": "Handed to you",
+  "hoHotel": "Picked up at hotel",
+  "hoMadinahHotel": "At your Madinah hotel",
+  "hoStorage": "In storage",
+  "hoVan": "In the van",
+  "holdExpired": "The hold has expired. Choose a time again.",
+  "holdLeft": "Your time is held for {time}",
+  "@holdLeft": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "holySitesMap": "Holy sites map",
+  "hotelOnly": "Hotel delivery only",
+  "howManyBags": "How many bags?",
+  "howManyHours": "How many hours?",
+  "howManyPeople": "How many people?",
+  "howManyTags": "How many tags?",
+  "imComing": "I'm coming",
+  "imFound": "I'm with my group now",
+  "imLost": "I'm lost",
+  "invalidTag": "That is not a Rafeeq tag code (RFQ-XXXXXX)",
+  "inviteHint": "Ask them to open Rafeeq › Profile › Travel group and scan this code.",
+  "inviteToGroup": "Invite to the group",
+  "invoice": "Invoice",
+  "isha": "Isha",
+  "job": "Job",
+  "join": "Join",
+  "joinAnotherGroup": "Join another group",
+  "joinCode": "Join code",
+  "joinGroup": "Join a group",
+  "justNow": "just now",
+  "kaabaKm": "The Kaaba is {km} km away",
+  "@kaabaKm": {
+    "placeholders": {
+      "km": {
+        "type": "int"
+      }
+    }
+  },
+  "kaabaMetres": "The Kaaba is {metres} m away",
+  "@kaabaMetres": {
+    "placeholders": {
+      "metres": {
+        "type": "int"
+      }
+    }
+  },
+  "keepBooking": "Keep booking",
+  "language": "Language",
+  "languageName": "English",
+  "languages": "Languages",
+  "languagesSpoken": "Speaks: {languages}",
+  "@languagesSpoken": {
+    "placeholders": {
+      "languages": {
+        "type": "String"
+      }
+    }
+  },
+  "lastSeen": "last seen {age}",
+  "@lastSeen": {
+    "placeholders": {
+      "age": {
+        "type": "String"
+      }
+    }
+  },
+  "leader": "Leader",
+  "leaveReview": "Leave a review",
+  "less": "Less",
+  "locationConsent": "Rafeeq will record your location every few minutes and share it only with your travel group. It is deleted 7 days after your trip. You can turn this off at any time, which deletes what was stored.",
+  "locationPermissionNeeded": "Allow location for Rafeeq in your phone settings.",
+  "login": "Log in",
+  "loginIntro": "Enter your phone number. We will send you a code.",
+  "lostFailed": "Couldn't send the alert. Send the SMS or call your group.",
+  "lostLocating": "Finding your location…",
+  "lostNoGroup": "You are not in a travel group. Join one in Profile so someone is told.",
+  "lostQueued": "No internet. Send the SMS so your group gets your location.",
+  "lostSendSms": "Send my location by SMS",
+  "lostSent": "Your group has been told. Help is coming.",
+  "lostShowStaff": "Show this screen to Haram staff or a guard.",
+  "lostSmsTemplate": "%name% is lost and needs help. Location: %map%",
+  "lostStay": "Stay where you are if it is safe. Moving makes it harder to find you.",
+  "madinah": "Madinah",
+  "maghrib": "Maghrib",
+  "makkah": "Makkah",
+  "map": "Map",
+  "mapPackSaved": "Places and routes are saved on your phone and work without internet.",
+  "markFound": "Found",
+  "meetingPoint": "Meeting point",
+  "meetingPointHint": "e.g. hotel lobby, main entrance",
+  "methodCard": "Card",
+  "methodMada": "mada",
+  "metresMinutes": "{metres} m · about {minutes} min",
+  "@metresMinutes": {
+    "placeholders": {
+      "metres": {
+        "type": "int"
+      },
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "minutes": "{count, plural, =1{1 minute} other{{count} minutes}}",
+  "@minutes": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "minutesAgo": "{count, plural, =1{1 min ago} other{{count} min ago}}",
+  "@minutesAgo": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "more": "More",
+  "myFamily": "My family",
+  "myNeeds": "My needs (shared with providers when I book)",
+  "name": "Name",
+  "navigate": "Navigate",
+  "nearestLostAndFound": "Nearest lost and found",
+  "needBlind": "Blind",
+  "needHearing": "Hard of hearing",
+  "needLowVision": "Low vision",
+  "needMemory": "Memory loss",
+  "needOther": "Other needs",
+  "needWalker": "Uses a walker or cane",
+  "needWheelchair": "Uses a wheelchair",
+  "needsShared": "Your accessibility needs are shared with the provider for this booking.",
+  "next": "Next",
+  "nextBooking": "Next booking",
+  "nextFree": "Next free: {time}",
+  "@nextFree": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "nextHandoverBy": "Next handover expected by {time}",
+  "@nextHandoverBy": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "nextPrayer": "{prayer} at {time} (in {minutes} min)",
+  "@nextPrayer": {
+    "placeholders": {
+      "prayer": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      },
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "noBookings": "No bookings yet",
+  "noCompass": "This phone has no compass. Use the angle from north.",
+  "noContacts": "No emergency contacts yet",
+  "noJobsToday": "No jobs today",
+  "noOrders": "No orders yet",
+  "noRoutes": "No walking routes for this city yet",
+  "noSlots": "No free times in the next 7 days",
+  "notFound": "Not found",
+  "notNow": "Not now",
+  "notSharing": "not sharing location",
+  "notesForProvider": "Notes for the provider",
+  "nothingFound": "Nothing found",
+  "offers": "Offers",
+  "ok": "OK",
+  "oneShopOnly": "Showing one shop only",
+  "order": "Order",
+  "orders": "Orders",
+  "otherShopInCart": "Your cart has items from another shop. Each order comes from one shop.",
+  "outOfStock": "Out of stock",
+  "paid": "Paid",
+  "past": "Past",
+  "pay": "Pay",
+  "payAmount": "Pay {amount}",
+  "@payAmount": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "payWith": "Pay with",
+  "paymentDeclined": "Payment declined. Try another card.",
+  "perBag": "per bag",
+  "perBooking": "per booking",
+  "perHour": "per hour",
+  "perPerson": "per person",
+  "perTag": "per tag",
+  "perTrip": "per trip",
+  "phone": "Phone number",
+  "phoneHint": "With country code, e.g. +62 812…",
+  "phoneOrEmail": "Phone number or email",
+  "phoneWithCountry": "Phone (with country code)",
+  "pickup": "Pick-up",
+  "pilgrimNeeds": "Pilgrim's needs",
+  "policyFlexible": "Free cancellation until 24 hours before",
+  "policyModerate": "Full refund until 48 hours before, then half",
+  "policyStrict": "Half refund until 7 days before, then none",
+  "postcode": "Postcode",
+  "prayerMethod": "Umm al-Qura method, computed on your phone. Follow the adhan at the Haram.",
+  "prayerTimes": "Prayer times",
+  "previous": "Previous",
+  "problemSent": "Sent. Bidec support will contact you.",
+  "provider": "Provider",
+  "ptGate": "Haram gates",
+  "ptGathering": "Gathering point",
+  "ptHolySite": "Holy site",
+  "ptHotel": "Hotel",
+  "ptLostFound": "Lost and found",
+  "ptShopping": "Shopping",
+  "ptToilet": "Toilets and wudu",
+  "qibla": "Qibla",
+  "qiblaBearing": "Qibla: {degrees}° from north",
+  "@qiblaBearing": {
+    "placeholders": {
+      "degrees": {
+        "type": "int"
+      }
+    }
+  },
+  "qiblaHint": "Hold the phone flat. The arrow turns green when you face the Qibla.",
+  "qiblaNeedsLocation": "Turn on location, or choose your hotel in Profile.",
+  "quantity": "Quantity",
+  "quickLoginIntro": "Testing mode: enter a phone number or email to log in. No code needed.",
+  "refundPolicyShown": "Full price, refund policy and provider are shown before you pay.",
+  "relation": "Relation (optional)",
+  "rentTag": "Rent a tag, delivered to your hotel",
+  "repeat": "Repeat",
+  "reportMissing": "Report this bag missing",
+  "reportProblem": "Report a problem",
+  "required": "Required",
+  "retry": "Try again",
+  "reviewHint": "What went well? What could be better?",
+  "reviews": "Reviews",
+  "reviewsCount": "{count, plural, =1{1 review} other{{count} reviews}}",
+  "@reviewsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "room": "Room number",
+  "sandboxNote": "Demo mode: no real money moves. Use test card 4111 1111 1111 1111 to pay, or 4000 0000 0000 0002 to see a declined payment.",
+  "save": "Save",
+  "saved": "Saved",
+  "scanAt": "Handover: {place}",
+  "@scanAt": {
+    "placeholders": {
+      "place": {
+        "type": "String"
+      }
+    }
+  },
+  "scanBags": "Scan bags",
+  "scanQr": "Scan QR code",
+  "scansWaiting": "{count, plural, =1{1 scan waiting for network} other{{count} scans waiting for network}}",
+  "@scansWaiting": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "searchHint": "Search transport, guides, bags…",
+  "searchResults": "Results for “{query}”",
+  "@searchResults": {
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "secDates": "Dates",
+  "secMadinah": "Madinah gifts",
+  "secMakkah": "Makkah gifts",
+  "seeTotal": "See total",
+  "send": "Send",
+  "sendCode": "Send code",
+  "sent": "Sent",
+  "services": "Services",
+  "setHotelFirst": "Choose your hotel in Profile first",
+  "setupIntro": "Tell us where you are staying so we can show services near you.",
+  "setupTitle": "Your trip",
+  "shareLocation": "Share my location with my group",
+  "shareLocationHint": "So they can find you if you get lost",
+  "sharingLocationWithPilgrim": "The pilgrim can see your location while this job is active.",
+  "shipHome": "Ship home",
+  "shipsHome": "Can be shipped home",
+  "shopOnline": "Shop online",
+  "shoppingPlaces": "Places to buy gifts and dates",
+  "showList": "Show list",
+  "showMap": "Show map",
+  "signOut": "Sign out",
+  "speaks": "Speaks {language}",
+  "@speaks": {
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "speaksMyLanguage": "Speaks my language",
+  "stAccepted": "Confirmed",
+  "stCancelled": "Cancelled",
+  "stCompleted": "Completed",
+  "stDeclined": "Declined",
+  "stDelivered": "Delivered",
+  "stDisputed": "Under review",
+  "stFound": "Found",
+  "stInProgress": "In progress",
+  "stInTransit": "On the way",
+  "stLost": "Lost",
+  "stOutForDelivery": "Out for delivery",
+  "stOverdue": "Overdue",
+  "stPacked": "Packed",
+  "stPaid": "Paid",
+  "stPendingPayment": "Awaiting payment",
+  "stRefunded": "Refunded",
+  "stShipped": "Shipped",
+  "stStored": "Stored",
+  "stTagged": "Tagged",
+  "staffMode": "Staff mode",
+  "stars": "{count, plural, =1{1 star} other{{count} stars}}",
+  "@stars": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "start": "Start",
+  "startJob": "Start job",
+  "startNewCart": "Start a new cart",
+  "stepFree": "Step-free, wheelchair friendly",
+  "subtotal": "Subtotal",
+  "sunrise": "Sunrise",
+  "tabBookings": "Bookings",
+  "tabGuide": "Guide",
+  "tabHome": "Home",
+  "tabProfile": "Profile",
+  "tabShop": "Shop",
+  "tagIntro": "A tracker tag (Apple AirTag or a Google Find My Device tag) helps find someone who doesn't use a phone. It is found by the family member who sets it up.",
+  "tagLabel": "Tag name",
+  "tagPrivacy": "Rafeeq never sees the tag's location; only the person who set it up can.",
+  "tagRecord": "Which tag do you carry?",
+  "tagStep1": "On the family member's phone, open Find My (iPhone) or Find My Device (Android).",
+  "tagStep2": "Hold the tag near the phone and follow the steps to add it.",
+  "tagStep3": "Put the tag in a pocket, bag or on a lanyard the pilgrim always carries.",
+  "tagStep4": "Write below which tag this is, so your group knows who carries it.",
+  "testCard": "Test card number",
+  "thanksReview": "Thank you for your review",
+  "toMyHotel": "My hotel",
+  "todaysJobs": "Today's jobs",
+  "torch": "Torch",
+  "total": "Total",
+  "trackerTag": "Tracker tag",
+  "tracking": "Tracking",
+  "travelDates": "Travel dates",
+  "travelGroup": "Travel group",
+  "tryThese": "Similar services you can book instead:",
+  "typeTagCode": "Type the tag code",
+  "upcoming": "Upcoming",
+  "updatedAgo": "{minutes, plural, =0{Saved on your phone · updated just now} =1{Saved on your phone · updated 1 min ago} other{Saved on your phone · updated {minutes} min ago}}",
+  "@updatedAgo": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "vatIncluded": "Prices include 15% VAT.",
+  "verified": "Verified",
+  "voiceOff": "Voice off",
+  "voiceOn": "Voice on",
+  "waiting": "Waiting",
+  "waitingForProvider": "Waiting for the provider to accept. If they don't answer in 30 minutes, you get a full refund or another provider.",
+  "waitingToSend": "{count, plural, =1{1 item waiting for network} other{{count} items waiting for network}}",
+  "@waitingToSend": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "walkHere": "Walk here",
+  "walkingDirections": "Walking directions",
+  "warnLate": "This may arrive after you leave. Choose shipping home instead?",
+  "welcome": "Your companion for Umrah and Hajj",
+  "whatHappened": "What happened?",
+  "when": "When",
+  "you": "(you)",
+  "yourBags": "Bags",
+  "yourHotel": "Your hotel",
+  "yourLocation": "Your location",
+  "yourName": "Your name",
+  "yourNameHint": "As your group and providers will see it",
+  "zuyarahNote": "Full heritage trips are in the Zuyarah app."
+}

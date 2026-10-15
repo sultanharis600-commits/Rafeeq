@@ -1,0 +1,74 @@
+{
+  "_note": "12 sample providers: 8 service providers and 4 shops. Names, CR numbers and IBANs are invented.",
+  "providers": [
+    {
+      "key": "sample-transport", "owner": "owner-transport", "type": "company", "kind": "services", "city": "makkah", "status": "approved", "crNumber": "4030000001", "commissionRateBps": 1500,
+      "name": { "en": "Sample Transport Co.", "ar": "شركة النقل التجريبية", "ur": "سیمپل ٹرانسپورٹ کمپنی", "id": "Sample Transport Co.", "ms": "Sample Transport Co.", "tr": "Sample Transport Co." },
+      "description": { "en": "Licensed vans and cars between Jeddah airport, Makkah hotels and the Haram.", "ar": "حافلات وسيارات مرخصة بين مطار جدة وفنادق مكة والحرم." }
+    },
+    {
+      "key": "sample-transport-madinah", "owner": "owner-transport-madinah", "type": "company", "kind": "services", "city": "madinah", "status": "approved", "crNumber": "4650000002", "commissionRateBps": 1500,
+      "name": { "en": "Sample Madinah Rides", "ar": "رحلات المدينة التجريبية" },
+      "description": { "en": "Airport, train station and Makkah–Madinah transfers.", "ar": "نقل من المطار ومحطة القطار وبين مكة والمدينة." }
+    },
+    {
+      "key": "sample-guides-makkah", "owner": "owner-guides-makkah", "type": "company", "kind": "services", "city": "makkah", "status": "approved", "crNumber": "4030000003", "commissionRateBps": 2000,
+      "name": { "en": "Sample Guides Makkah", "ar": "مرشدو مكة التجريبيون", "ur": "سیمپل گائیڈز مکہ" },
+      "description": { "en": "Certified Umrah guides in Urdu, Indonesian, Turkish and English.", "ar": "مرشدو عمرة معتمدون بالأردية والإندونيسية والتركية والإنجليزية." }
+    },
+    {
+      "key": "sample-photo", "owner": "owner-photo", "type": "individual", "kind": "services", "city": "makkah", "status": "approved", "commissionRateBps": 2000,
+      "name": { "en": "Sample Pilgrim Photography", "ar": "تصوير الحجاج التجريبي" },
+      "description": { "en": "Respectful personal and family photography outside prayer areas.", "ar": "تصوير شخصي وعائلي باحترام خارج أماكن الصلاة." }
+    },
+    {
+      "key": "sample-luggage", "owner": "owner-luggage", "type": "company", "kind": "services", "city": "makkah", "status": "approved", "crNumber": "4030000005", "commissionRateBps": 1500,
+      "name": { "en": "Sample Luggage Services", "ar": "خدمات الأمتعة التجريبية", "ur": "سیمپل سامان سروسز", "id": "Sample Layanan Bagasi", "ms": "Sample Perkhidmatan Bagasi", "tr": "Sample Bagaj Hizmetleri" },
+      "description": { "en": "Bag storage, hotel-to-airport transfer and shipping home, with every handover scanned.", "ar": "تخزين الأمتعة ونقلها من الفندق إلى المطار وشحنها، مع مسح كل عملية تسليم." }
+    },
+    {
+      "key": "sample-care", "owner": "owner-care", "type": "company", "kind": "services", "city": "makkah", "status": "approved", "crNumber": "4030000006", "commissionRateBps": 1000,
+      "name": { "en": "Sample Care Companions", "ar": "مرافقو الرعاية التجريبيون", "id": "Sample Pendamping Lansia" },
+      "description": { "en": "Trained companions and wheelchair help for elderly and disabled pilgrims.", "ar": "مرافقون مدربون ومساعدة بالكراسي المتحركة لكبار السن وذوي الإعاقة." }
+    },
+    {
+      "key": "sample-access-transport", "owner": "owner-access-transport", "type": "company", "kind": "services", "city": "makkah", "status": "approved", "crNumber": "4030000007", "commissionRateBps": 1000,
+      "name": { "en": "Sample Accessible Transport", "ar": "النقل الميسّر التجريبي" },
+      "description": { "en": "Vans with wheelchair ramps and space for a companion.", "ar": "حافلات بمنحدرات للكراسي المتحركة ومكان للمرافق." }
+    },
+    {
+      "key": "sample-guides-madinah", "owner": "owner-guides-madinah", "type": "individual", "kind": "services", "city": "madinah", "status": "pending",
+      "name": { "en": "Sample Madinah Guide (awaiting verification)", "ar": "مرشد المدينة التجريبي (بانتظار التحقق)" },
+      "description": { "en": "Independent guide for Madinah heritage sites. Documents uploaded, waiting for Bidec approval.", "ar": "مرشد مستقل للمواقع التراثية في المدينة. الوثائق مرفوعة بانتظار موافقة بايدك." }
+    },
+
+    {
+      "key": "sample-dates-house", "owner": "owner-dates-house", "type": "company", "kind": "shop", "city": "madinah", "status": "approved", "crNumber": "4650000009", "commissionRateBps": 1200,
+      "name": { "en": "Sample Dates House", "ar": "بيت التمور التجريبي", "ur": "سیمپل کھجور ہاؤس", "id": "Sample Rumah Kurma", "ms": "Sample Rumah Kurma", "tr": "Sample Hurma Evi" },
+      "description": { "en": "Madinah dates packed for travel, delivered to your hotel or shipped home.", "ar": "تمور المدينة معبأة للسفر، توصيل للفندق أو شحن للوطن." }
+    },
+    {
+      "key": "sample-makkah-gifts", "owner": "owner-makkah-gifts", "type": "company", "kind": "shop", "city": "makkah", "status": "approved", "crNumber": "4030000010", "commissionRateBps": 1500,
+      "name": { "en": "Sample Makkah Gifts", "ar": "هدايا مكة التجريبية", "id": "Sample Oleh-oleh Makkah" },
+      "description": { "en": "Prayer mats, misbahas, Makkah gift boxes and keepsakes.", "ar": "سجادات صلاة ومسابح وصناديق هدايا مكة وتذكارات." }
+    },
+    {
+      "key": "sample-madinah-souvenirs", "owner": "owner-madinah-souvenirs", "type": "company", "kind": "shop", "city": "madinah", "status": "approved", "crNumber": "4650000011", "commissionRateBps": 1500,
+      "name": { "en": "Sample Madinah Souvenirs", "ar": "تذكارات المدينة التجريبية" },
+      "description": { "en": "Gifts from Madinah: books, prayer beads, scarves and gift sets.", "ar": "هدايا من المدينة: كتب ومسابح وأوشحة وأطقم هدايا." }
+    },
+    {
+      "key": "sample-attar", "owner": "owner-attar", "type": "individual", "kind": "shop", "city": "makkah", "status": "approved", "commissionRateBps": 1500,
+      "name": { "en": "Sample Attar & Oud", "ar": "عطور ودهن العود التجريبي" },
+      "description": { "en": "Alcohol-free attar, oud and bakhoor gift sets.", "ar": "عطور خالية من الكحول وعود وبخور." }
+    }
+  ],
+  "staff": [
+    { "user": "staff-khalid", "provider": "sample-transport", "staffRole": "driver", "vehicle": "Toyota Hiace · 10 seats" },
+    { "user": "staff-yousef", "provider": "sample-access-transport", "staffRole": "driver", "vehicle": "Hyundai H1 · wheelchair ramp · 4 seats + 1 wheelchair" },
+    { "user": "staff-bilal", "provider": "sample-guides-makkah", "staffRole": "guide" },
+    { "user": "staff-saeed", "provider": "sample-luggage", "staffRole": "luggage", "vehicle": "Isuzu cargo van" },
+    { "user": "staff-omar", "provider": "sample-luggage", "staffRole": "luggage" },
+    { "user": "staff-hamza", "provider": "sample-care", "staffRole": "assistant" }
+  ]
+}
