@@ -110,7 +110,7 @@ class _CheckoutScreenState extends ConsumerState<CheckoutScreen> {
                 SectionTitle(t.payWith),
                 for (final m in const ['mada', 'card', 'apple_pay', 'stc_pay'])
                   ListTile(
-                    leading: Icon(_method == m ? Icons.radio_button_checked : Icons.radio_button_unchecked, color: RafeeqColors.brand700),
+                    leading: Icon(_method == m ? Icons.radio_button_checked_rounded : Icons.radio_button_unchecked_rounded, color: RafeeqColors.brand700),
                     title: Text(methodLabel(t, m)),
                     onTap: () => setState(() => _method = m),
                   ),

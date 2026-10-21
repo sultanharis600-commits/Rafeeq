@@ -21,14 +21,14 @@ TileLayer osmTiles() => TileLayer(
     );
 
 IconData placeIcon(String type) => switch (type) {
-      'holy_site' => Icons.mosque,
-      'gate' => Icons.door_front_door,
-      'lost_and_found' => Icons.support_agent,
-      'gathering_point' => Icons.groups,
-      'hotel' => Icons.hotel,
-      'toilet' => Icons.wc,
-      'shopping' => Icons.storefront,
-      _ => Icons.place,
+      'holy_site' => Icons.mosque_rounded,
+      'gate' => Icons.door_front_door_rounded,
+      'lost_and_found' => Icons.support_agent_rounded,
+      'gathering_point' => Icons.groups_rounded,
+      'hotel' => Icons.hotel_rounded,
+      'toilet' => Icons.wc_rounded,
+      'shopping' => Icons.storefront_rounded,
+      _ => Icons.place_rounded,
     };
 
 String placeTypeLabel(AppLocalizations t, String type) => switch (type) {
@@ -69,7 +69,7 @@ class _MapScreenState extends ConsumerState<MapScreen> {
       appBar: AppBar(title: Text(t.map), actions: [
         IconButton(
           tooltip: _showList ? t.showMap : t.showList,
-          icon: Icon(_showList ? Icons.map : Icons.list),
+          icon: Icon(_showList ? Icons.map_rounded : Icons.list_rounded),
           onPressed: () => setState(() => _showList = !_showList),
         ),
       ]),
@@ -127,7 +127,7 @@ class _MapScreenState extends ConsumerState<MapScreen> {
                               point: LatLng((hotel['lat'] as num).toDouble(), (hotel['lng'] as num).toDouble()),
                               width: 44,
                               height: 44,
-                              child: const Icon(Icons.hotel, color: RafeeqColors.gold500, size: 36),
+                              child: const Icon(Icons.hotel_rounded, color: RafeeqColors.gold500, size: 36),
                             ),
                           for (final pl in places)
                             Marker(
@@ -192,7 +192,7 @@ class _PlaceTile extends ConsumerWidget {
         child: Wrap(spacing: 8, runSpacing: 8, children: [
           if (route.isNotEmpty)
             FilledButton.tonalIcon(
-              icon: const Icon(Icons.directions_walk),
+              icon: const Icon(Icons.directions_walk_rounded),
               label: Text(t.walkHere),
               onPressed: () {
                 if (expanded) Navigator.of(context).pop();
@@ -201,7 +201,7 @@ class _PlaceTile extends ConsumerWidget {
             ),
           if (shopId != null)
             FilledButton.icon(
-              icon: const Icon(Icons.shopping_bag),
+              icon: const Icon(Icons.shopping_bag_rounded),
               label: Text(t.shopOnline),
               onPressed: () {
                 if (expanded) Navigator.of(context).pop();

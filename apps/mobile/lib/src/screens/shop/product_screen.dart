@@ -74,9 +74,9 @@ class _ProductScreenState extends ConsumerState<ProductScreen> {
             if (p['isFood'] == true) ListTile(leading: const Icon(Icons.info_outline), title: Text(t.customsNote)),
             const SizedBox(height: 12),
             Row(children: [
-              IconButton.filledTonal(iconSize: 30, tooltip: t.less, onPressed: _qty > 1 ? () => setState(() => _qty--) : null, icon: const Icon(Icons.remove)),
+              IconButton.filledTonal(iconSize: 30, tooltip: t.less, onPressed: _qty > 1 ? () => setState(() => _qty--) : null, icon: const Icon(Icons.remove_rounded)),
               Padding(padding: const EdgeInsets.symmetric(horizontal: 20), child: Text('$_qty', style: const TextStyle(fontSize: 26))),
-              IconButton.filledTonal(iconSize: 30, tooltip: t.more, onPressed: _qty < (p['stock'] as int) ? () => setState(() => _qty++) : null, icon: const Icon(Icons.add)),
+              IconButton.filledTonal(iconSize: 30, tooltip: t.more, onPressed: _qty < (p['stock'] as int) ? () => setState(() => _qty++) : null, icon: const Icon(Icons.add_rounded)),
             ]),
             const SizedBox(height: 16),
             FilledButton(onPressed: p['inStock'] == true ? () => _add(p) : null, child: Text(p['inStock'] == true ? t.addToCart : t.outOfStock)),

@@ -100,10 +100,10 @@ class _FinderScreenState extends ConsumerState<FinderScreen> {
     final seenRecently = _lastSeen != null && DateTime.now().difference(_lastSeen!) < const Duration(seconds: 8);
     final metres = _smoothed == null ? null : rssiToMetres(_smoothed!.round());
     final (Color color, String label, IconData icon) = switch ((seenRecently, _trend)) {
-      (false, _) => (RafeeqColors.ink600, t.finderSearching, Icons.bluetooth_searching),
-      (true, _Trend.warmer) => (RafeeqColors.danger, t.finderWarmer, Icons.local_fire_department),
-      (true, _Trend.colder) => (const Color(0xFF1565C0), t.finderColder, Icons.ac_unit),
-      _ => (RafeeqColors.gold500, t.finderSame, Icons.bluetooth_connected),
+      (false, _) => (RafeeqColors.ink600, t.finderSearching, Icons.bluetooth_searching_rounded),
+      (true, _Trend.warmer) => (RafeeqColors.danger, t.finderWarmer, Icons.local_fire_department_rounded),
+      (true, _Trend.colder) => (const Color(0xFF1565C0), t.finderColder, Icons.ac_unit_rounded),
+      _ => (RafeeqColors.gold500, t.finderSame, Icons.bluetooth_connected_rounded),
     };
 
     return Scaffold(

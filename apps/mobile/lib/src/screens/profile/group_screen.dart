@@ -59,7 +59,7 @@ class _GroupScreenState extends ConsumerState<GroupScreen> {
             if (c.data.isNotEmpty)
               Padding(
                 padding: const EdgeInsets.all(16),
-                child: OutlinedButton.icon(icon: const Icon(Icons.group_add), label: Text(t.joinAnotherGroup), onPressed: () => _join(context, ref)),
+                child: OutlinedButton.icon(icon: const Icon(Icons.group_add_rounded), label: Text(t.joinAnotherGroup), onPressed: () => _join(context, ref)),
               ),
           ]),
         ),
@@ -84,7 +84,7 @@ Future<void> _join(BuildContext context, WidgetRef ref, {String? code}) async {
         ),
         const SizedBox(height: 12),
         OutlinedButton.icon(
-          icon: const Icon(Icons.qr_code_scanner),
+          icon: const Icon(Icons.qr_code_scanner_rounded),
           label: Text(t.scanQr),
           onPressed: () async {
             final scanned = await Navigator.of(c).push<String>(MaterialPageRoute(builder: (_) => const _QrScan()));
@@ -139,13 +139,13 @@ class _NoGroup extends ConsumerWidget {
     return Padding(
       padding: const EdgeInsets.all(20),
       child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
-        const Icon(Icons.groups, size: 72, color: RafeeqColors.brand700),
+        const Icon(Icons.groups_rounded, size: 72, color: RafeeqColors.brand700),
         const SizedBox(height: 12),
         Text(t.groupIntro, style: const TextStyle(fontSize: 18)),
         const SizedBox(height: 20),
-        FilledButton.icon(icon: const Icon(Icons.qr_code_scanner), label: Text(t.joinGroup), onPressed: () => _join(context, ref)),
+        FilledButton.icon(icon: const Icon(Icons.qr_code_scanner_rounded), label: Text(t.joinGroup), onPressed: () => _join(context, ref)),
         const SizedBox(height: 12),
-        OutlinedButton.icon(icon: const Icon(Icons.add), label: Text(t.createGroup), onPressed: () => _create(context, ref)),
+        OutlinedButton.icon(icon: const Icon(Icons.add_rounded), label: Text(t.createGroup), onPressed: () => _create(context, ref)),
       ]),
     );
   }
@@ -188,7 +188,7 @@ class _Group extends ConsumerWidget {
             padding: const EdgeInsets.all(12),
             child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
               Row(children: [
-                const Icon(Icons.sos, color: RafeeqColors.danger, size: 36),
+                const Icon(Icons.sos_rounded, color: RafeeqColors.danger, size: 36),
                 const SizedBox(width: 8),
                 Expanded(
                   child: Text(
@@ -202,13 +202,13 @@ class _Group extends ConsumerWidget {
               Wrap(spacing: 8, runSpacing: 8, children: [
                 if (a['userId'] != me.id)
                   FilledButton.icon(
-                    icon: const Icon(Icons.bluetooth_searching),
+                    icon: const Icon(Icons.bluetooth_searching_rounded),
                     label: Text(t.findNearby),
                     onPressed: () => context.push('/finder/${a['userId']}'),
                   ),
                 if (member(a['userId'] as String)?['phone'] != null)
                   OutlinedButton.icon(
-                    icon: const Icon(Icons.call),
+                    icon: const Icon(Icons.call_rounded),
                     label: Text(t.call),
                     onPressed: () => launchUrl(Uri.parse('tel:${member(a['userId'] as String)!['phone']}')),
                   ),
@@ -222,7 +222,7 @@ class _Group extends ConsumerWidget {
       SectionTitle(
         group['name'] as String,
         trailing: TextButton.icon(
-          icon: const Icon(Icons.qr_code),
+          icon: const Icon(Icons.qr_code_rounded),
           label: Text(group['joinCode'] as String, textDirection: TextDirection.ltr),
           onPressed: () => showDialog<void>(
             context: context,
@@ -264,7 +264,7 @@ class _Group extends ConsumerWidget {
                         width: 120,
                         height: 56,
                         child: Column(children: [
-                          Icon(Icons.person_pin_circle, size: 36, color: alerts.any((a) => a['userId'] == m['userId']) ? RafeeqColors.danger : RafeeqColors.brand900),
+                          Icon(Icons.person_pin_circle_rounded, size: 36, color: alerts.any((a) => a['userId'] == m['userId']) ? RafeeqColors.danger : RafeeqColors.brand900),
                           Text((m['name'] as String).split(' ').first, style: const TextStyle(fontWeight: FontWeight.w700, backgroundColor: Colors.white)),
                         ]),
                       ),
@@ -277,7 +277,7 @@ class _Group extends ConsumerWidget {
       for (final m in members)
         ListTile(
           leading: Icon(
-            m['accessibilityMode'] == true ? Icons.accessible : Icons.person,
+            m['accessibilityMode'] == true ? Icons.accessible_rounded : Icons.person_rounded,
             size: 32,
             color: alerts.any((a) => a['userId'] == m['userId']) ? RafeeqColors.danger : RafeeqColors.brand700,
           ),
@@ -291,8 +291,8 @@ class _Group extends ConsumerWidget {
           trailing: m['userId'] == me.id
               ? null
               : Row(mainAxisSize: MainAxisSize.min, children: [
-                  IconButton(tooltip: t.findNearby, icon: const Icon(Icons.bluetooth_searching), onPressed: () => context.push('/finder/${m['userId']}')),
-                  IconButton(tooltip: t.call, icon: const Icon(Icons.call), onPressed: () => launchUrl(Uri.parse('tel:${m['phone']}'))),
+                  IconButton(tooltip: t.findNearby, icon: const Icon(Icons.bluetooth_searching_rounded), onPressed: () => context.push('/finder/${m['userId']}')),
+                  IconButton(tooltip: t.call, icon: const Icon(Icons.call_rounded), onPressed: () => launchUrl(Uri.parse('tel:${m['phone']}'))),
                 ]),
         ),
     ]);

@@ -6,6 +6,7 @@ import { api, ApiError, PROVIDER_COOKIE, TOKEN_COOKIE } from '@/lib/api';
 import type { ActionState } from './common';
 import { str } from './common';
 
+/** OTP + quick-login still work on /login; session gates no longer force that page. */
 export async function requestCode(_: ActionState, form: FormData): Promise<ActionState> {
   const phone = str(form, 'phone') ?? '';
   try {

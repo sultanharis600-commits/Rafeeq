@@ -19,11 +19,23 @@ class BookingsScreen extends ConsumerWidget {
     return DefaultTabController(
       length: 3,
       child: Scaffold(
-        appBar: AppBar(
-          title: Text(t.tabBookings),
-          bottom: TabBar(tabs: [Tab(text: t.upcoming), Tab(text: t.past), Tab(text: t.orders)]),
+        appBar: heroAppBar(
+          title: t.tabBookings,
+          bottom: heroTabBar(
+            tabs: [
+              Tab(text: t.upcoming),
+              Tab(text: t.past),
+              Tab(text: t.orders),
+            ],
+          ),
         ),
-        body: const TabBarView(children: [_BookingList(scope: 'upcoming'), _BookingList(scope: 'past'), _OrderList()]),
+        body: const TabBarView(
+          children: [
+            _BookingList(scope: 'upcoming'),
+            _BookingList(scope: 'past'),
+            _OrderList(),
+          ],
+        ),
       ),
     );
   }
@@ -46,7 +58,11 @@ class _BookingList extends ConsumerWidget {
         builder: (c) => ListView(
           children: [
             StaleBanner(cached: c),
-            if (c.data.isEmpty) Padding(padding: const EdgeInsets.all(32), child: Text(t.noBookings, textAlign: TextAlign.center)),
+            if (c.data.isEmpty)
+              Padding(
+                padding: const EdgeInsets.all(32),
+                child: Text(t.noBookings, textAlign: TextAlign.center),
+              ),
             for (final b in c.data)
               Card(
                 margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
@@ -79,21 +95,27 @@ class _OrderList extends ConsumerWidget {
       child: AsyncView(
         value: list,
         onRetry: () => ref.invalidate(myOrdersProvider),
-        builder: (c) => ListView(children: [
-          StaleBanner(cached: c),
-          if (c.data.isEmpty) Padding(padding: const EdgeInsets.all(32), child: Text(t.noOrders, textAlign: TextAlign.center)),
-          for (final o in c.data)
-            Card(
-              margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-              child: ListTile(
-                leading: const Icon(Icons.card_giftcard, color: RafeeqColors.brand700, size: 32),
-                title: Text(o['shop'] as String),
-                subtitle: Text('${Fmt.dateTime(o['createdAt'] as String, lang)} · ${Fmt.sar(o['totalHalalas'] as int, lang)}'),
-                trailing: StatusChip(o['status'] as String),
-                onTap: () => context.push('/order/${o['id']}'),
+        builder: (c) => ListView(
+          children: [
+            StaleBanner(cached: c),
+            if (c.data.isEmpty)
+              Padding(
+                padding: const EdgeInsets.all(32),
+                child: Text(t.noOrders, textAlign: TextAlign.center),
               ),
-            ),
-        ]),
+            for (final o in c.data)
+              Card(
+                margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                child: ListTile(
+                  leading: const Icon(Icons.card_giftcard_rounded, color: RafeeqColors.brand700, size: 32),
+                  title: Text(o['shop'] as String),
+                  subtitle: Text('${Fmt.dateTime(o['createdAt'] as String, lang)} · ${Fmt.sar(o['totalHalalas'] as int, lang)}'),
+                  trailing: StatusChip(o['status'] as String),
+                  onTap: () => context.push('/order/${o['id']}'),
+                ),
+              ),
+          ],
+        ),
       ),
     );
   }

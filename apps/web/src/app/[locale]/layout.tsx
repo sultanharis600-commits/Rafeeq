@@ -34,7 +34,7 @@ export default async function LocaleLayout({
         {/* eslint-disable-next-line @next/next/no-page-custom-font -- root layout: applies to every page */}
         <link
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600&family=Inter:wght@400;600&display=swap"
+          href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
         />
       </head>
       <body className="min-h-screen antialiased">

@@ -14,8 +14,7 @@ Future<void> pumpApp(WidgetTester tester) async {
   await tester.pumpAndSettle();
 }
 
-/// The login screen shows a spinner while it asks the API whether quick login is on,
-/// so pumpAndSettle would wait forever; pump the route change instead.
+/// Home and login both kick off API calls, so pumpAndSettle can hang; pump the route change instead.
 Future<void> settleRoute(WidgetTester tester) async {
   for (var i = 0; i < 10; i++) {
     await tester.pump(const Duration(milliseconds: 100));
@@ -30,22 +29,22 @@ void main() {
     }
   });
 
-  testWidgets('choosing Arabic goes to login, right-to-left and in Arabic', (tester) async {
+  testWidgets('choosing Arabic goes to home, right-to-left and in Arabic', (tester) async {
     await pumpApp(tester);
     await tester.tap(find.text('العربية'));
     await settleRoute(tester);
 
-    expect(find.text('تسجيل الدخول'), findsWidgets);
+    expect(find.text('ابحث عن نقل، مرشدين، أمتعة…'), findsWidgets);
     final context = tester.element(find.byType(Scaffold).first);
     expect(Directionality.of(context), TextDirection.rtl);
   });
 
-  testWidgets('choosing Indonesian shows the login screen in Indonesian', (tester) async {
+  testWidgets('choosing Indonesian shows the home screen in Indonesian', (tester) async {
     await pumpApp(tester);
     await tester.tap(find.text('Bahasa Indonesia'));
     await settleRoute(tester);
 
-    expect(find.text('Masuk'), findsWidgets);
+    expect(find.text('Cari transportasi, pembimbing, bagasi…'), findsWidgets);
     final context = tester.element(find.byType(Scaffold).first);
     expect(Directionality.of(context), TextDirection.ltr);
   });

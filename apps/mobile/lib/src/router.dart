@@ -52,7 +52,9 @@ final routerProvider = Provider<GoRouter>((ref) {
       final loc = state.matchedLocation;
       if (s.loading) return loc == '/splash' ? null : '/splash';
       if (s.locale == null) return loc == '/language' ? null : '/language';
-      if (!s.loggedIn) return loc == '/login' ? null : '/login';
+      // Login authentication commented out — skip /login; wait on splash until a demo session exists.
+      // if (!s.loggedIn) return loc == '/login' ? null : '/login';
+      if (!s.loggedIn) return loc == '/splash' ? null : '/splash';
       final me = s.me!;
       if (me.isStaff) return loc.startsWith('/staff') ? null : '/staff';
       if (!me.setupDone && loc != '/setup') return '/setup';
@@ -60,47 +62,122 @@ final routerProvider = Provider<GoRouter>((ref) {
       return null;
     },
     routes: [
-      GoRoute(path: '/splash', builder: (_, _) => const Scaffold(body: Center(child: CircularProgressIndicator()))),
+      GoRoute(
+        path: '/splash',
+        builder: (_, _) => const Scaffold(body: Center(child: CircularProgressIndicator())),
+      ),
       GoRoute(path: '/language', builder: (_, _) => const LanguageScreen()),
       GoRoute(path: '/login', builder: (_, _) => const LoginScreen()),
       GoRoute(path: '/setup', builder: (_, _) => const SetupScreen()),
       StatefulShellRoute.indexedStack(
         builder: (context, state, shell) => PilgrimShell(shell: shell),
         branches: [
-          StatefulShellBranch(routes: [
-            GoRoute(path: '/home', builder: (_, _) => const HomeScreen(), routes: [
-              GoRoute(path: 'services', builder: (_, s) => ServicesScreen(category: s.uri.queryParameters['category'], query: s.uri.queryParameters['q'])),
-            ]),
-          ]),
-          StatefulShellBranch(routes: [GoRoute(path: '/bookings', builder: (_, _) => const BookingsScreen())]),
-          StatefulShellBranch(routes: [GoRoute(path: '/shop', builder: (_, s) => ShopScreen(section: s.uri.queryParameters['section'], shopId: s.uri.queryParameters['shop']))]),
-          StatefulShellBranch(routes: [GoRoute(path: '/guide', builder: (_, _) => const GuideScreen())]),
-          StatefulShellBranch(routes: [GoRoute(path: '/profile', builder: (_, _) => const ProfileScreen())]),
+          StatefulShellBranch(
+            routes: [
+              GoRoute(
+                path: '/home',
+                builder: (_, _) => const HomeScreen(),
+                routes: [
+                  GoRoute(
+                    path: 'services',
+                    builder: (_, s) => ServicesScreen(category: s.uri.queryParameters['category'], query: s.uri.queryParameters['q']),
+                  ),
+                ],
+              ),
+            ],
+          ),
+          StatefulShellBranch(
+            routes: [GoRoute(path: '/bookings', builder: (_, _) => const BookingsScreen())],
+          ),
+          StatefulShellBranch(
+            routes: [
+              GoRoute(
+                path: '/shop',
+                builder: (_, s) => ShopScreen(section: s.uri.queryParameters['section'], shopId: s.uri.queryParameters['shop']),
+              ),
+            ],
+          ),
+          StatefulShellBranch(
+            routes: [GoRoute(path: '/guide', builder: (_, _) => const GuideScreen())],
+          ),
+          StatefulShellBranch(
+            routes: [GoRoute(path: '/profile', builder: (_, _) => const ProfileScreen())],
+          ),
         ],
       ),
       // Full-screen pages above the tabs
-      GoRoute(parentNavigatorKey: _rootKey, path: '/service/:id', builder: (_, s) => ServiceScreen(id: s.pathParameters['id']!)),
-      GoRoute(parentNavigatorKey: _rootKey, path: '/service/:id/book', builder: (_, s) => BookScreen(id: s.pathParameters['id']!)),
-      GoRoute(parentNavigatorKey: _rootKey, path: '/checkout', builder: (_, s) => CheckoutScreen(bookingId: s.uri.queryParameters['booking'], orderId: s.uri.queryParameters['order'])),
-      GoRoute(parentNavigatorKey: _rootKey, path: '/booking/:id', builder: (_, s) => BookingScreen(id: s.pathParameters['id']!)),
-      GoRoute(parentNavigatorKey: _rootKey, path: '/bag/:id', builder: (_, s) => BagScreen(id: s.pathParameters['id']!)),
-      GoRoute(parentNavigatorKey: _rootKey, path: '/product/:id', builder: (_, s) => ProductScreen(id: s.pathParameters['id']!)),
+      GoRoute(
+        parentNavigatorKey: _rootKey,
+        path: '/service/:id',
+        builder: (_, s) => ServiceScreen(id: s.pathParameters['id']!),
+      ),
+      GoRoute(
+        parentNavigatorKey: _rootKey,
+        path: '/service/:id/book',
+        builder: (_, s) => BookScreen(id: s.pathParameters['id']!),
+      ),
+      GoRoute(
+        parentNavigatorKey: _rootKey,
+        path: '/checkout',
+        builder: (_, s) => CheckoutScreen(bookingId: s.uri.queryParameters['booking'], orderId: s.uri.queryParameters['order']),
+      ),
+      GoRoute(
+        parentNavigatorKey: _rootKey,
+        path: '/booking/:id',
+        builder: (_, s) => BookingScreen(id: s.pathParameters['id']!),
+      ),
+      GoRoute(
+        parentNavigatorKey: _rootKey,
+        path: '/bag/:id',
+        builder: (_, s) => BagScreen(id: s.pathParameters['id']!),
+      ),
+      GoRoute(
+        parentNavigatorKey: _rootKey,
+        path: '/product/:id',
+        builder: (_, s) => ProductScreen(id: s.pathParameters['id']!),
+      ),
       GoRoute(parentNavigatorKey: _rootKey, path: '/cart', builder: (_, _) => const CartScreen()),
-      GoRoute(parentNavigatorKey: _rootKey, path: '/order/:id', builder: (_, s) => OrderScreen(id: s.pathParameters['id']!)),
-      GoRoute(parentNavigatorKey: _rootKey, path: '/map', builder: (_, s) => MapScreen(filter: s.uri.queryParameters['type'])),
-      GoRoute(parentNavigatorKey: _rootKey, path: '/route/:id', builder: (_, s) => RouteScreen(id: s.pathParameters['id']!)),
+      GoRoute(
+        parentNavigatorKey: _rootKey,
+        path: '/order/:id',
+        builder: (_, s) => OrderScreen(id: s.pathParameters['id']!),
+      ),
+      GoRoute(
+        parentNavigatorKey: _rootKey,
+        path: '/map',
+        builder: (_, s) => MapScreen(filter: s.uri.queryParameters['type']),
+      ),
+      GoRoute(
+        parentNavigatorKey: _rootKey,
+        path: '/route/:id',
+        builder: (_, s) => RouteScreen(id: s.pathParameters['id']!),
+      ),
       GoRoute(parentNavigatorKey: _rootKey, path: '/qibla', builder: (_, _) => const QiblaScreen()),
       GoRoute(parentNavigatorKey: _rootKey, path: '/group', builder: (_, _) => const GroupScreen()),
       GoRoute(parentNavigatorKey: _rootKey, path: '/contacts', builder: (_, _) => const ContactsScreen()),
       GoRoute(parentNavigatorKey: _rootKey, path: '/tracker-tag', builder: (_, _) => const TrackerTagScreen()),
       GoRoute(parentNavigatorKey: _rootKey, path: '/help', builder: (_, _) => const HelpScreen()),
       GoRoute(parentNavigatorKey: _rootKey, path: '/lost', builder: (_, _) => const LostScreen()),
-      GoRoute(parentNavigatorKey: _rootKey, path: '/finder/:userId', builder: (_, s) => FinderScreen(userId: s.pathParameters['userId']!)),
+      GoRoute(
+        parentNavigatorKey: _rootKey,
+        path: '/finder/:userId',
+        builder: (_, s) => FinderScreen(userId: s.pathParameters['userId']!),
+      ),
       // Staff mode
-      GoRoute(path: '/staff', builder: (_, _) => const StaffHome(), routes: [
-        GoRoute(path: 'job/:id', builder: (_, s) => JobScreen(id: s.pathParameters['id']!)),
-        GoRoute(path: 'scan', builder: (_, s) => ScannerScreen(bookingId: s.uri.queryParameters['booking'])),
-      ]),
+      GoRoute(
+        path: '/staff',
+        builder: (_, _) => const StaffHome(),
+        routes: [
+          GoRoute(
+            path: 'job/:id',
+            builder: (_, s) => JobScreen(id: s.pathParameters['id']!),
+          ),
+          GoRoute(
+            path: 'scan',
+            builder: (_, s) => ScannerScreen(bookingId: s.uri.queryParameters['booking']),
+          ),
+        ],
+      ),
     ],
   );
 });

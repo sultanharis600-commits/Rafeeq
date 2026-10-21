@@ -44,12 +44,12 @@ class SessionState {
   bool get loggedIn => token != null && me != null;
 
   SessionState copyWith({Locale? locale, String? token, Me? me, bool? accessibilityMode, bool? loading, bool clearUser = false}) => SessionState(
-        locale: locale ?? this.locale,
-        token: clearUser ? null : (token ?? this.token),
-        me: clearUser ? null : (me ?? this.me),
-        accessibilityMode: accessibilityMode ?? this.accessibilityMode,
-        loading: loading ?? this.loading,
-      );
+    locale: locale ?? this.locale,
+    token: clearUser ? null : (token ?? this.token),
+    me: clearUser ? null : (me ?? this.me),
+    accessibilityMode: accessibilityMode ?? this.accessibilityMode,
+    loading: loading ?? this.loading,
+  );
 }
 
 class Session extends StateNotifier<SessionState> {
@@ -60,6 +60,29 @@ class Session extends StateNotifier<SessionState> {
   final Api _api;
   final Ref _ref;
   static const _storage = FlutterSecureStorage();
+
+  Me _guestMe(String lang) => Me({
+    'id': '00000000-0000-0000-0000-000000000000',
+    'name': 'Demo',
+    'role': 'pilgrim',
+    'language': lang,
+    'accessibilityMode': false,
+    'accessibilityNeeds': <String>[],
+    'city': 'makkah',
+    'hotel': {'name': 'Demo', 'city': 'makkah'},
+  });
+
+  /// Login is commented out: enter as the demo pilgrim, or a local guest if the API is down.
+  Future<void> _skipLogin() async {
+    if (state.loggedIn) return;
+    try {
+      await quickLogin('ahmed@rafeeq.test').timeout(const Duration(seconds: 2));
+    } catch (_) {
+      final lang = state.locale?.languageCode ?? 'en';
+      _api.token = 'dev-skip-login';
+      state = state.copyWith(token: 'dev-skip-login', me: _guestMe(lang));
+    }
+  }
 
   Future<void> _restore() async {
     final prefs = _ref.read(prefsProvider);
@@ -84,6 +107,8 @@ class Session extends StateNotifier<SessionState> {
         }
       }
     }
+    // Login authentication commented out.
+    if (lang != null && !state.loggedIn) await _skipLogin();
     state = state.copyWith(loading: false);
   }
 
@@ -92,13 +117,15 @@ class Session extends StateNotifier<SessionState> {
     await _ref.read(prefsProvider).setString('language', code);
     _api.language = code;
     state = state.copyWith(locale: Locale(code));
-    if (state.loggedIn) await updateProfile({'language': code});
+    // Login authentication commented out — sign in after language instead of opening /login.
+    if (!state.loggedIn) await _skipLogin();
+    if (state.loggedIn && state.token != 'dev-skip-login') await updateProfile({'language': code});
   }
 
   Future<void> setAccessibility(bool on) async {
     await _ref.read(prefsProvider).setBool('accessibility', on);
     state = state.copyWith(accessibilityMode: on);
-    if (state.loggedIn) await updateProfile({'accessibilityMode': on});
+    if (state.loggedIn && state.token != 'dev-skip-login') await updateProfile({'accessibilityMode': on});
   }
 
   /// Returns the demo code in demo mode.
@@ -108,12 +135,14 @@ class Session extends StateNotifier<SessionState> {
   }
 
   Future<void> verify(String phone, String code, {String? name}) async {
-    final res = await _api.post('/auth/otp/verify', {
-      'phone': phone,
-      'code': code,
-      if (name != null && name.isNotEmpty) 'name': name,
-      'language': state.locale?.languageCode ?? 'en',
-    }) as Map;
+    final res =
+        await _api.post('/auth/otp/verify', {
+              'phone': phone,
+              'code': code,
+              if (name != null && name.isNotEmpty) 'name': name,
+              'language': state.locale?.languageCode ?? 'en',
+            })
+            as Map;
     final token = res['token'] as String;
     await _storage.write(key: 'token', value: token);
     _api.token = token;
@@ -133,11 +162,13 @@ class Session extends StateNotifier<SessionState> {
 
   /// Testing only: phone number or email, no code. The API refuses this outside demo mode.
   Future<void> quickLogin(String identifier, {String? name}) async {
-    final res = await _api.post('/auth/quick-login', {
-      'identifier': identifier,
-      if (name != null && name.isNotEmpty) 'name': name,
-      'language': state.locale?.languageCode ?? 'en',
-    }) as Map;
+    final res =
+        await _api.post('/auth/quick-login', {
+              'identifier': identifier,
+              if (name != null && name.isNotEmpty) 'name': name,
+              'language': state.locale?.languageCode ?? 'en',
+            })
+            as Map;
     final token = res['token'] as String;
     await _storage.write(key: 'token', value: token);
     _api.token = token;

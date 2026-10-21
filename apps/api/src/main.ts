@@ -14,7 +14,7 @@ async function bootstrap() {
 
   const config = app.get<ConfigService<Env, true>>(ConfigService);
   const port = config.get('PORT', { infer: true });
-  await app.listen(port);
+  await app.listen(port, '0.0.0.0');
   Logger.log(
     `Rafeeq API on :${port} · docs at /docs · demo mode ${config.get('DEMO_MODE', { infer: true }) ? 'ON' : 'OFF'}`,
     'Bootstrap',

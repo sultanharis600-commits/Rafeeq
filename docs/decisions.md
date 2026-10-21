@@ -2,6 +2,10 @@
 
 Short records of choices that differ from, or add to, the guide. Newest first.
 
+## 2026-10-20 · Visual design follows the Saudi national design system
+
+The app and the web tools follow the DGA's Platforms Code (the Saudi government's unified design system, Nov 2024): SA flag green `#1B8354` as the primary colour, gold `#DBA102`, cool greys on a white page, IBM Plex Sans Arabic. Terracotta stays for alerts, and "I'm lost" is the one solid red button. Layout rule: no boxed cards. Content sits on white, set apart by space and hairlines; a Material `Card` is themed as a plain row with a bottom hairline. Services are free-standing icons on a soft eight-point star; the next booking is a timeline row; offers are an edge-to-edge band. Saudi motifs: the green header with the eight-point star (khatim) lattice and the Sadu weave band. Tokens live in `packages/shared/src/design.ts`, `apps/web/src/app/globals.css` and `apps/mobile/lib/src/theme.dart`; change all three together. Neutrals keep the `sand*` token names to avoid renaming every class.
+
 ## 2026-10-15 · Testing login without a code
 
 For testing, the web tools and the app log in with just a phone number or email (`POST /v1/auth/quick-login`), with no code. It is controlled by `QUICK_LOGIN`, which follows `DEMO_MODE` and cannot be on without it (the API refuses to start). Anyone who can reach a server with it on can log in as any account, admins included, so keep test servers private and set `QUICK_LOGIN=false` (or `DEMO_MODE=false`) on anything shared outside the team. Role checks are unchanged: a pilgrim still can't open admin pages. Phone + code login stays in place and comes back automatically when quick login is off. Users gained an optional, unique `email` column.

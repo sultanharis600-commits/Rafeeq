@@ -60,10 +60,10 @@ export default async function Providers({ params, searchParams }: { params: Prom
                     {r.status === 'pending' && (
                       <>
                         <button name="to" value="approve" className="min-h-12 rounded-lg bg-brand-700 px-4 text-white">{t('providers.approve')}</button>
-                        <button name="to" value="reject" className="min-h-12 rounded-lg border border-red-700 px-4 text-red-700">{t('providers.reject')}</button>
+                        <button name="to" value="reject" className="min-h-12 rounded-xl border border-clay-500/40 bg-white px-4 font-semibold text-clay-700 hover:bg-clay-100">{t('providers.reject')}</button>
                       </>
                     )}
-                    {r.status === 'approved' && <button name="to" value="suspend" className="min-h-12 rounded-lg border border-red-700 px-4 text-red-700">{t('providers.suspend')}</button>}
+                    {r.status === 'approved' && <button name="to" value="suspend" className="min-h-12 rounded-xl border border-clay-500/40 bg-white px-4 font-semibold text-clay-700 hover:bg-clay-100">{t('providers.suspend')}</button>}
                     {r.status === 'suspended' && <button name="to" value="reinstate" className="min-h-12 rounded-lg bg-brand-700 px-4 text-white">{t('providers.reinstate')}</button>}
                   </div>
                 </ActionForm>

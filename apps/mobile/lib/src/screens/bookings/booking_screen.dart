@@ -62,12 +62,12 @@ class BookingScreen extends ConsumerWidget {
                   Card(
                     margin: const EdgeInsets.symmetric(horizontal: 12),
                     child: ListTile(
-                      leading: const Icon(Icons.badge, size: 32, color: RafeeqColors.brand700),
+                      leading: const Icon(Icons.badge_rounded, size: 32, color: RafeeqColors.brand700),
                       title: Text(staff['name'] as String),
                       subtitle: Text(staff['vehicle'] as String? ?? ''),
                       trailing: staff['phone'] == null
                           ? null
-                          : IconButton.filled(tooltip: t.call, icon: const Icon(Icons.call), onPressed: () => launchUrl(Uri.parse('tel:${staff['phone']}'))),
+                          : IconButton.filled(tooltip: t.call, icon: const Icon(Icons.call_rounded), onPressed: () => launchUrl(Uri.parse('tel:${staff['phone']}'))),
                     ),
                   ),
                 if (live != null)
@@ -86,7 +86,7 @@ class BookingScreen extends ConsumerWidget {
                                 point: LatLng((live['lat'] as num).toDouble(), (live['lng'] as num).toDouble()),
                                 width: 44,
                                 height: 44,
-                                child: const Icon(Icons.directions_car, color: RafeeqColors.brand900, size: 40),
+                                child: const Icon(Icons.directions_car_rounded, color: RafeeqColors.brand900, size: 40),
                               ),
                             ]),
                           ],
@@ -98,7 +98,7 @@ class BookingScreen extends ConsumerWidget {
                   SectionTitle(t.yourBags),
                   for (final g in bags)
                     ListTile(
-                      leading: const Icon(Icons.luggage, size: 32),
+                      leading: const Icon(Icons.luggage_rounded, size: 32),
                       title: Text((g['label'] as String?) ?? g['tagCode'] as String),
                       subtitle: Text(g['tagCode'] as String),
                       trailing: StatusChip(g['status'] as String),
@@ -117,7 +117,7 @@ class BookingScreen extends ConsumerWidget {
                     if (['completed', 'paid_out'].contains(status)) _ReviewButton(bookingId: id),
                     if (status != 'pending_payment' && status != 'cancelled')
                       OutlinedButton.icon(
-                        icon: const Icon(Icons.receipt_long),
+                        icon: const Icon(Icons.receipt_long_rounded),
                         label: Text(t.invoice),
                         onPressed: () => openInvoice(context, ref, 'bookings', id),
                       ),
@@ -233,7 +233,7 @@ class _ReviewButton extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final t = l10n(context);
     return FilledButton.icon(
-      icon: const Icon(Icons.star),
+      icon: const Icon(Icons.star_rounded),
       label: Text(t.leaveReview),
       onPressed: () async {
         final result = await showModalBottomSheet<(int, String)>(context: context, isScrollControlled: true, builder: (_) => const ReviewSheet());
@@ -278,7 +278,7 @@ class _ReviewSheetState extends State<ReviewSheet> {
             IconButton(
               iconSize: 40,
               tooltip: t.stars(i),
-              icon: Icon(i <= _rating ? Icons.star : Icons.star_border, color: RafeeqColors.gold500),
+              icon: Icon(i <= _rating ? Icons.star_rounded : Icons.star_border_rounded, color: RafeeqColors.gold500),
               onPressed: () => setState(() => _rating = i),
             ),
         ]),

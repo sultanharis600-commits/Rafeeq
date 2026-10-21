@@ -51,10 +51,10 @@ class OrderScreen extends ConsumerWidget {
                   ListTile(dense: true, leading: const Icon(Icons.check_circle_outline), title: Text(statusLabel(t, h['to'] as String)), subtitle: Text(Fmt.dateTime(h['at'] as String, lang))),
                 const SizedBox(height: 12),
                 if (status == 'pending_payment') FilledButton(onPressed: () => context.push('/checkout?order=$id'), child: Text(t.pay)),
-                if (status != 'pending_payment') OutlinedButton.icon(icon: const Icon(Icons.receipt_long), label: Text(t.invoice), onPressed: () => openInvoice(context, ref, 'orders', id)),
+                if (status != 'pending_payment') OutlinedButton.icon(icon: const Icon(Icons.receipt_long_rounded), label: Text(t.invoice), onPressed: () => openInvoice(context, ref, 'orders', id)),
                 if (status == 'delivered')
                   FilledButton.icon(
-                    icon: const Icon(Icons.star),
+                    icon: const Icon(Icons.star_rounded),
                     label: Text(t.leaveReview),
                     onPressed: () async {
                       final r = await showModalBottomSheet<(int, String)>(context: context, isScrollControlled: true, builder: (_) => const ReviewSheet());

@@ -61,7 +61,7 @@ class ContactsScreen extends ConsumerWidget {
     final contacts = ref.watch(contactsProvider);
     return Scaffold(
       appBar: AppBar(title: Text(t.emergencyContacts)),
-      floatingActionButton: FloatingActionButton.extended(onPressed: () => _add(context, ref), icon: const Icon(Icons.add), label: Text(t.addContact)),
+      floatingActionButton: FloatingActionButton.extended(onPressed: () => _add(context, ref), icon: const Icon(Icons.add_rounded), label: Text(t.addContact)),
       body: AsyncView(
         value: contacts,
         onRetry: () => ref.invalidate(contactsProvider),
@@ -70,11 +70,11 @@ class ContactsScreen extends ConsumerWidget {
           if (list.isEmpty) Padding(padding: const EdgeInsets.all(16), child: Text(t.noContacts)),
           for (final c in list)
             ListTile(
-              leading: const Icon(Icons.person, size: 32),
+              leading: const Icon(Icons.person_rounded, size: 32),
               title: Text(c['name'] as String),
               subtitle: Text([c['phone'] as String, if (c['relation'] != null) c['relation'] as String].join(' · '), textDirection: TextDirection.ltr),
               trailing: Row(mainAxisSize: MainAxisSize.min, children: [
-                IconButton(tooltip: t.call, icon: const Icon(Icons.call), onPressed: () => launchUrl(Uri.parse('tel:${c['phone']}'))),
+                IconButton(tooltip: t.call, icon: const Icon(Icons.call_rounded), onPressed: () => launchUrl(Uri.parse('tel:${c['phone']}'))),
                 IconButton(
                   tooltip: t.delete,
                   icon: const Icon(Icons.delete_outline),

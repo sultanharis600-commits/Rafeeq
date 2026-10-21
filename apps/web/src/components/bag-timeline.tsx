@@ -27,7 +27,7 @@ export async function BagTimelineView({ bag, locale }: { bag: BagTimeline; local
           ))}
         </ol>
         {bag.expectedNextScanBy && (
-          <p className={`mt-4 ${isPast(bag.expectedNextScanBy) ? 'font-semibold text-red-700' : 'text-ink-600'}`}>
+          <p className={`mt-4 ${isPast(bag.expectedNextScanBy) ? 'font-semibold text-clay-700' : 'text-ink-600'}`}>
             {t('nextScanBy', { time: when(bag.expectedNextScanBy, locale, { timeStyle: 'short' }) })}
           </p>
         )}

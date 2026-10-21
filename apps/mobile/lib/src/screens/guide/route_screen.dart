@@ -63,7 +63,7 @@ class _RouteScreenState extends ConsumerState<RouteScreen> {
       appBar: AppBar(title: Text(t.walkingDirections), actions: [
         IconButton(
           tooltip: _voice ? t.voiceOff : t.voiceOn,
-          icon: Icon(_voice ? Icons.volume_up : Icons.volume_off),
+          icon: Icon(_voice ? Icons.volume_up_rounded : Icons.volume_off_rounded),
           onPressed: () {
             setState(() => _voice = !_voice);
             if (!_voice) _tts.stop();
@@ -94,7 +94,7 @@ class _RouteScreenState extends ConsumerState<RouteScreen> {
                   t.metresMinutes(route['distanceM'] as int, route['minutes'] as int),
                   if (route['accessible'] == true) t.stepFree else t.hasSteps,
                 ].join(' · ')),
-                leading: Icon(route['accessible'] == true ? Icons.accessible : Icons.stairs, size: 32, color: RafeeqColors.brand700),
+                leading: Icon(route['accessible'] == true ? Icons.accessible_rounded : Icons.stairs_rounded, size: 32, color: RafeeqColors.brand700),
               ),
               Expanded(
                 child: Padding(
@@ -113,10 +113,10 @@ class _RouteScreenState extends ConsumerState<RouteScreen> {
                     Icon(
                       switch (dir) {
                         // Left and right are about the walker, not the screen, so they don't flip in RTL.
-                        'left' => Icons.turn_left,
-                        'right' => Icons.turn_right,
-                        'arrive' => Icons.flag,
-                        _ => Icons.straight,
+                        'left' => Icons.turn_left_rounded,
+                        'right' => Icons.turn_right_rounded,
+                        'arrive' => Icons.flag_rounded,
+                        _ => Icons.straight_rounded,
                       },
                       textDirection: rtl ? TextDirection.ltr : null,
                       size: 72,
@@ -145,7 +145,7 @@ class _RouteScreenState extends ConsumerState<RouteScreen> {
                   ),
                 ]),
               ),
-              TextButton.icon(icon: const Icon(Icons.replay), label: Text(t.repeat), onPressed: () => _speak(pick(step['instruction'], lang), lang)),
+              TextButton.icon(icon: const Icon(Icons.replay_rounded), label: Text(t.repeat), onPressed: () => _speak(pick(step['instruction'], lang), lang)),
             ]),
           );
         },

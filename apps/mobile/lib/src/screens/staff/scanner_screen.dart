@@ -103,8 +103,8 @@ class _ScannerScreenState extends ConsumerState<ScannerScreen> {
 
     return Scaffold(
       appBar: AppBar(title: Text(t.scanBags), actions: [
-        IconButton(tooltip: t.typeTagCode, icon: const Icon(Icons.keyboard), onPressed: _manual),
-        IconButton(tooltip: t.torch, icon: const Icon(Icons.flashlight_on), onPressed: () => _controller.toggleTorch()),
+        IconButton(tooltip: t.typeTagCode, icon: const Icon(Icons.keyboard_rounded), onPressed: _manual),
+        IconButton(tooltip: t.torch, icon: const Icon(Icons.flashlight_on_rounded), onPressed: () => _controller.toggleTorch()),
       ]),
       body: Column(children: [
         SizedBox(
@@ -147,13 +147,13 @@ class _ScannerScreenState extends ConsumerState<ScannerScreen> {
           child: ListView(children: [
             for (final (code, place, at) in _done)
               ListTile(
-                leading: Icon(waitingIds.contains(code) ? Icons.cloud_upload_outlined : Icons.cloud_done, color: waitingIds.contains(code) ? RafeeqColors.gold500 : RafeeqColors.brand700),
+                leading: Icon(waitingIds.contains(code) ? Icons.cloud_upload_outlined : Icons.cloud_done_rounded, color: waitingIds.contains(code) ? RafeeqColors.gold500 : RafeeqColors.brand700),
                 title: Text(code, textDirection: TextDirection.ltr),
                 subtitle: Text('${handoverLabel(t, place)} · ${Fmt.hm(at, lang)}'),
                 trailing: Text(waitingIds.contains(code) ? t.waiting : t.sent),
               ),
             for (final r in ref.read(offlineQueueProvider.notifier).rejected)
-              ListTile(leading: const Icon(Icons.error, color: RafeeqColors.danger), title: Text(r)),
+              ListTile(leading: const Icon(Icons.error_rounded, color: RafeeqColors.danger), title: Text(r)),
           ]),
         ),
       ]),

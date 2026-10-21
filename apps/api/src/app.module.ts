@@ -22,6 +22,7 @@ import { ShopModule } from './shop/shop.module.js';
 import { PlacesModule } from './places/places.module.js';
 import { AdminModule } from './admin/admin.module.js';
 import { UploadsModule } from './uploads/uploads.module.js';
+// Uploads: encrypted provider documents (PDF).
 
 @Module({
   imports: [

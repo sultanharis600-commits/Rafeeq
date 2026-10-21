@@ -66,7 +66,7 @@ class _QiblaScreenState extends ConsumerState<QiblaScreen> {
                 label: t.qiblaBearing(qibla.round()),
                 child: Transform.rotate(
                   angle: angle * math.pi / 180,
-                  child: Icon(Icons.navigation, size: 220, color: aligned ? RafeeqColors.brand700 : RafeeqColors.gold500),
+                  child: Icon(Icons.navigation_rounded, size: 220, color: aligned ? RafeeqColors.brand700 : RafeeqColors.gold500),
                 ),
               ),
               const SizedBox(height: 24),

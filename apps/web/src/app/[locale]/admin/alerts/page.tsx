@@ -19,8 +19,8 @@ export default async function AlertsPage({ params }: { params: Promise<{ locale:
     <>
       <PageHeader title={t('nav.alerts')} />
       <div className="mb-6 grid gap-4 sm:grid-cols-2">
-        <Stat label={t('alerts.open')} value={data.open} tone={data.open ? 'warn' : 'default'} />
-        <Stat label={t('alerts.week')} value={data.last7Days} />
+        <Stat label={t('alerts.open')} icon="alert" value={data.open} tone={data.open ? 'warn' : 'default'} />
+        <Stat label={t('alerts.week')} icon="alert" value={data.last7Days} />
       </div>
       <Notice>{t('alerts.privacy')}</Notice>
       <Card className="mt-6">

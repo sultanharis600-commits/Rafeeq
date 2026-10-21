@@ -23,21 +23,21 @@ class HelpScreen extends ConsumerWidget {
           color: const Color(0xFFFBE4E2),
           child: Column(children: [
             ListTile(
-              leading: const Icon(Icons.local_hospital, color: RafeeqColors.danger, size: 32),
+              leading: const Icon(Icons.local_hospital_rounded, color: RafeeqColors.danger, size: 32),
               title: Text(t.emergency911),
-              trailing: IconButton.filled(tooltip: t.call, icon: const Icon(Icons.call), onPressed: () => launchUrl(Uri.parse('tel:911'))),
+              trailing: IconButton.filled(tooltip: t.call, icon: const Icon(Icons.call_rounded), onPressed: () => launchUrl(Uri.parse('tel:911'))),
             ),
             ListTile(
-              leading: const Icon(Icons.emergency, color: RafeeqColors.danger, size: 32),
+              leading: const Icon(Icons.emergency_rounded, color: RafeeqColors.danger, size: 32),
               title: Text(t.ambulance997),
-              trailing: IconButton.filled(tooltip: t.call, icon: const Icon(Icons.call), onPressed: () => launchUrl(Uri.parse('tel:997'))),
+              trailing: IconButton.filled(tooltip: t.call, icon: const Icon(Icons.call_rounded), onPressed: () => launchUrl(Uri.parse('tel:997'))),
             ),
           ]),
         ),
         ListTile(
-          leading: const Icon(Icons.support_agent, size: 32, color: RafeeqColors.brand700),
+          leading: const Icon(Icons.support_agent_rounded, size: 32, color: RafeeqColors.brand700),
           title: Text(t.ptLostFound),
-          trailing: const Icon(Icons.chevron_right),
+          trailing: const Icon(Icons.chevron_right_rounded),
           onTap: () => context.push('/map?type=lost_and_found'),
         ),
         SectionTitle(t.helpArticles),

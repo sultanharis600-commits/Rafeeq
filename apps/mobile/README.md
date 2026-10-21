@@ -24,6 +24,7 @@ python3 tool/configure_platforms.py      # camera, location, Bluetooth, sms:/tel
 flutter pub get
 flutter gen-l10n
 flutter run --dart-define=API_URL=http://10.0.2.2:3000     # Android emulator → API on your laptop
+flutter run -d chrome --dart-define=API_URL=http://127.0.0.1:3000   # Flutter web in the browser
 ```
 
 On a real phone use your laptop's address on the same Wi-Fi, e.g. `--dart-define=API_URL=http://192.168.1.20:3000`. Commit `android/` and `ios/` after the first run.

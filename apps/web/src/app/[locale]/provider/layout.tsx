@@ -16,24 +16,24 @@ export default async function ProviderLayout({ children, params }: { children: R
 
   const nav: NavItem[] = current
     ? [
-        { href: base, label: t('nav.overview') },
+        { href: base, label: t('nav.overview'), icon: 'overview' as const },
         ...(current.kind === 'services'
           ? [
-              { href: `${base}/bookings`, label: t('nav.bookings') },
-              { href: `${base}/services`, label: t('nav.services') },
-              { href: `${base}/bags`, label: t('nav.bags') },
+              { href: `${base}/bookings`, label: t('nav.bookings'), icon: 'calendar' as const },
+              { href: `${base}/services`, label: t('nav.services'), icon: 'layers' as const },
+              { href: `${base}/bags`, label: t('nav.bags'), icon: 'luggage' as const },
             ]
           : [
-              { href: `${base}/orders`, label: t('nav.orders') },
-              { href: `${base}/products`, label: t('nav.products') },
+              { href: `${base}/orders`, label: t('nav.orders'), icon: 'package' as const },
+              { href: `${base}/products`, label: t('nav.products'), icon: 'gift' as const },
             ]),
-        { href: `${base}/staff`, label: t('nav.staff') },
-        { href: `${base}/earnings`, label: t('nav.earnings') },
-        { href: `${base}/reviews`, label: t('nav.reviews') },
-        { href: `${base}/profile`, label: t('nav.profile') },
-        { href: `${base}/apply`, label: t('nav.addBusiness') },
+        { href: `${base}/staff`, label: t('nav.staff'), icon: 'users' as const },
+        { href: `${base}/earnings`, label: t('nav.earnings'), icon: 'wallet' as const },
+        { href: `${base}/reviews`, label: t('nav.reviews'), icon: 'star' as const },
+        { href: `${base}/profile`, label: t('nav.profile'), icon: 'store' as const },
+        { href: `${base}/apply`, label: t('nav.addBusiness'), icon: 'plus' as const },
       ]
-    : [{ href: `${base}/apply`, label: t('nav.apply') }];
+    : [{ href: `${base}/apply`, label: t('nav.apply'), icon: 'plus' as const }];
 
   const switcher =
     providers.length > 1 ? (
@@ -43,7 +43,7 @@ export default async function ProviderLayout({ children, params }: { children: R
             <button
               type="submit"
               aria-pressed={p.id === current?.id}
-              className={`min-h-11 rounded-lg px-3 ${p.id === current?.id ? 'bg-brand-700 text-white' : 'border border-sand-300 hover:bg-sand-100'}`}
+              className={`min-h-12 rounded-xl px-4 font-medium transition ${p.id === current?.id ? 'bg-brand-700 text-white shadow-soft' : 'border border-sand-300 bg-white hover:border-brand-700 hover:bg-brand-50'}`}
             >
               {pick(p.name, locale)}
             </button>

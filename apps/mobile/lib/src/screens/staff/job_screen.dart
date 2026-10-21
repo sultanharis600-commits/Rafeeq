@@ -113,12 +113,12 @@ class _JobScreenState extends ConsumerState<JobScreen> {
             if (pilgrim != null)
               Card(
                 child: ListTile(
-                  leading: const Icon(Icons.person, size: 32),
+                  leading: const Icon(Icons.person_rounded, size: 32),
                   title: Text(pilgrim['name'] as String),
                   subtitle: Text(t.speaks((pilgrim['language'] as String).toUpperCase())),
                   trailing: pilgrim['phone'] == null
                       ? null
-                      : IconButton.filled(tooltip: t.call, icon: const Icon(Icons.call), onPressed: () => launchUrl(Uri.parse('tel:${pilgrim['phone']}'))),
+                      : IconButton.filled(tooltip: t.call, icon: const Icon(Icons.call_rounded), onPressed: () => launchUrl(Uri.parse('tel:${pilgrim['phone']}'))),
                 ),
               ),
             if (needs.isNotEmpty || b['notes'] != null)
@@ -128,7 +128,7 @@ class _JobScreenState extends ConsumerState<JobScreen> {
                   padding: const EdgeInsets.all(12),
                   child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                     Row(children: [
-                      const Icon(Icons.accessible, color: RafeeqColors.danger),
+                      const Icon(Icons.accessible_rounded, color: RafeeqColors.danger),
                       const SizedBox(width: 8),
                       Text(t.pilgrimNeeds, style: const TextStyle(fontWeight: FontWeight.w700)),
                     ]),
@@ -140,25 +140,25 @@ class _JobScreenState extends ConsumerState<JobScreen> {
             for (final (label, key) in [(t.pickup, 'pickup'), (t.dropoff, 'dropoff')])
               if (b[key] is Map)
                 ListTile(
-                  leading: const Icon(Icons.place),
+                  leading: const Icon(Icons.place_rounded),
                   title: Text(label),
                   subtitle: Text(((b[key] as Map)['label'] as String?) ?? ''),
-                  trailing: TextButton.icon(icon: const Icon(Icons.navigation), label: Text(t.navigate), onPressed: () => _navigate(b[key] as Map)),
+                  trailing: TextButton.icon(icon: const Icon(Icons.navigation_rounded), label: Text(t.navigate), onPressed: () => _navigate(b[key] as Map)),
                 ),
             if (_share != null)
-              ListTile(leading: const Icon(Icons.share_location, color: RafeeqColors.brand700), title: Text(t.sharingLocationWithPilgrim)),
+              ListTile(leading: const Icon(Icons.share_location_rounded, color: RafeeqColors.brand700), title: Text(t.sharingLocationWithPilgrim)),
             const SizedBox(height: 12),
             if (category == 'luggage') ...[
               SectionTitle(t.yourBags),
               for (final g in bags)
                 ListTile(
-                  leading: const Icon(Icons.luggage),
+                  leading: const Icon(Icons.luggage_rounded),
                   title: Text((g['label'] as String?) ?? g['tagCode'] as String),
                   subtitle: Text(g['tagCode'] as String, textDirection: TextDirection.ltr),
                   trailing: StatusChip(g['status'] as String),
                 ),
               FilledButton.icon(
-                icon: const Icon(Icons.qr_code_scanner),
+                icon: const Icon(Icons.qr_code_scanner_rounded),
                 label: Text(t.scanBags),
                 onPressed: () => context.push('/staff/scan?booking=${widget.id}'),
               ),

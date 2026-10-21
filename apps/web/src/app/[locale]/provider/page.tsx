@@ -45,9 +45,9 @@ export default async function ProviderHome({ params }: { params: Promise<{ local
         <div className="space-y-6">
           {statusNotice}
           <div className="grid gap-4 sm:grid-cols-3">
-            <Stat label={t('stats.toPack')} value={toPack.items.length} tone={toPack.items.length ? 'warn' : 'default'} />
-            <Stat label={t('stats.lowStock')} value={low.length} tone={low.length ? 'warn' : 'default'} />
-            <Stat label={t('stats.pendingEarnings')} value={sar(earnings.pending.netHalalas, locale)} hint={t('stats.nextPayout')} tone="good" />
+            <Stat label={t('stats.toPack')} icon="package" value={toPack.items.length} tone={toPack.items.length ? 'warn' : 'default'} />
+            <Stat label={t('stats.lowStock')} icon="gift" value={low.length} tone={low.length ? 'warn' : 'default'} />
+            <Stat label={t('stats.pendingEarnings')} icon="wallet" value={sar(earnings.pending.netHalalas, locale)} hint={t('stats.nextPayout')} tone="good" />
           </div>
           <Card title={t('stats.toPack')}>
             <Table head={[t('orders.buyer'), t('orders.delivery'), t('orders.items'), t('common.total'), '']} empty={t('common.nothing')}>
@@ -81,10 +81,10 @@ export default async function ProviderHome({ params }: { params: Promise<{ local
       <div className="space-y-6">
         {statusNotice}
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <Stat label={t('stats.awaiting')} value={awaiting.items.length} hint={t('stats.awaitingHint')} tone={awaiting.items.length ? 'warn' : 'default'} />
-          <Stat label={t('stats.inProgress')} value={active.items.length} />
-          <Stat label={t('stats.overdueBags')} value={bags.overdue} tone={bags.overdue ? 'warn' : 'default'} hint={t('stats.openCases', { n: bags.openCases })} />
-          <Stat label={t('stats.pendingEarnings')} value={sar(earnings.pending.netHalalas, locale)} hint={t('stats.nextPayout')} tone="good" />
+          <Stat label={t('stats.awaiting')} icon="clock" value={awaiting.items.length} hint={t('stats.awaitingHint')} tone={awaiting.items.length ? 'warn' : 'default'} />
+          <Stat label={t('stats.inProgress')} icon="calendar" value={active.items.length} />
+          <Stat label={t('stats.overdueBags')} icon="luggage" value={bags.overdue} tone={bags.overdue ? 'warn' : 'default'} hint={t('stats.openCases', { n: bags.openCases })} />
+          <Stat label={t('stats.pendingEarnings')} icon="wallet" value={sar(earnings.pending.netHalalas, locale)} hint={t('stats.nextPayout')} tone="good" />
         </div>
         <Card title={t('stats.awaiting')}>
           <Table head={[t('bookings.service'), t('bookings.when'), t('bookings.pilgrim'), t('bookings.acceptBy'), '']} empty={t('common.nothing')}>

@@ -26,14 +26,14 @@ export default async function AdminHome({ params, searchParams }: { params: Prom
         ))}
       />
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <Stat label={t('overview.bookings')} value={ov.bookings.count} hint={t('overview.awaiting', { n: ov.bookings.awaitingAccept })} />
-        <Stat label={t('overview.gbv')} value={sar(ov.bookings.grossHalalas, locale)} />
-        <Stat label={t('overview.commission')} value={sar(ov.bookings.commissionHalalas + ov.shop.commissionHalalas, locale)} tone="good" />
-        <Stat label={t('overview.shopSales')} value={sar(ov.shop.salesHalalas, locale)} hint={t('overview.orders', { n: ov.shop.orders })} />
-        <Stat label={t('overview.refunds')} value={sar(ov.refundsHalalas, locale)} />
-        <Stat label={t('overview.providers')} value={ov.providers.active} hint={t('overview.pending', { n: ov.providers.pending })} tone={ov.providers.pending ? 'warn' : 'default'} />
-        <Stat label={t('overview.bagCases')} value={ov.safety.openBagCases} tone={ov.safety.openBagCases ? 'warn' : 'default'} />
-        <Stat label={t('overview.lostAlerts')} value={ov.safety.openLostAlerts} tone={ov.safety.openLostAlerts ? 'warn' : 'default'} />
+        <Stat label={t('overview.bookings')} icon="calendar" value={ov.bookings.count} hint={t('overview.awaiting', { n: ov.bookings.awaitingAccept })} />
+        <Stat label={t('overview.gbv')} icon="banknote" value={sar(ov.bookings.grossHalalas, locale)} />
+        <Stat label={t('overview.commission')} icon="trend" value={sar(ov.bookings.commissionHalalas + ov.shop.commissionHalalas, locale)} tone="good" />
+        <Stat label={t('overview.shopSales')} icon="gift" value={sar(ov.shop.salesHalalas, locale)} hint={t('overview.orders', { n: ov.shop.orders })} />
+        <Stat label={t('overview.refunds')} icon="card" value={sar(ov.refundsHalalas, locale)} />
+        <Stat label={t('overview.providers')} icon="shield" value={ov.providers.active} hint={t('overview.pending', { n: ov.providers.pending })} tone={ov.providers.pending ? 'warn' : 'default'} />
+        <Stat label={t('overview.bagCases')} icon="luggage" value={ov.safety.openBagCases} tone={ov.safety.openBagCases ? 'warn' : 'default'} />
+        <Stat label={t('overview.lostAlerts')} icon="alert" value={ov.safety.openLostAlerts} tone={ov.safety.openLostAlerts ? 'warn' : 'default'} />
       </div>
       <div className="mt-6 grid gap-6 lg:grid-cols-2">
         <Card title={t('overview.byCategory')}>

@@ -100,9 +100,9 @@ class _BookScreenState extends ConsumerState<BookScreen> {
               if (_quantityAllowed(model)) ...[
                 SectionTitle(quantityLabel(t, model)),
                 Row(children: [
-                  IconButton.filledTonal(iconSize: 32, onPressed: _quantity > 1 ? () => setState(() => _quantity--) : null, icon: const Icon(Icons.remove), tooltip: t.less),
+                  IconButton.filledTonal(iconSize: 32, onPressed: _quantity > 1 ? () => setState(() => _quantity--) : null, icon: const Icon(Icons.remove_rounded), tooltip: t.less),
                   Padding(padding: const EdgeInsets.symmetric(horizontal: 24), child: Text('$_quantity', style: const TextStyle(fontSize: 28))),
-                  IconButton.filledTonal(iconSize: 32, onPressed: _quantity < 20 ? () => setState(() => _quantity++) : null, icon: const Icon(Icons.add), tooltip: t.more),
+                  IconButton.filledTonal(iconSize: 32, onPressed: _quantity < 20 ? () => setState(() => _quantity++) : null, icon: const Icon(Icons.add_rounded), tooltip: t.more),
                 ]),
               ],
               for (final o in asList(s['options']))

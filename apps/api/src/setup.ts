@@ -8,7 +8,20 @@ export function configureApp(app: INestApplication): void {
   const config = app.get<ConfigService<Env, true>>(ConfigService);
   app.setGlobalPrefix('v1', { exclude: ['health'] });
   app.useGlobalPipes(new ValidationPipe({ whitelist: true, forbidNonWhitelisted: true, transform: true }));
-  app.enableCors({ origin: config.get('CORS_ORIGINS', { infer: true }), credentials: true });
+  const allowed = config.get('CORS_ORIGINS', { infer: true });
+  const nodeEnv = config.get('NODE_ENV', { infer: true });
+  app.enableCors({
+    origin: (origin: string | undefined, cb: (err: Error | null, allow?: boolean) => void) => {
+      if (!origin) return cb(null, true);
+      if (allowed.includes(origin)) return cb(null, true);
+      // Flutter web uses a random localhost port (e.g. http://localhost:62366).
+      if (nodeEnv !== 'production' && /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin)) {
+        return cb(null, true);
+      }
+      cb(null, false);
+    },
+    credentials: true,
+  });
   app.enableShutdownHooks();
 }
 

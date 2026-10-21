@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 
 import '../api/offline_queue.dart';
 import '../lost/location_service.dart';
+import '../theme.dart';
 import '../widgets/common.dart';
 
 /// Five bottom tabs: Home, Bookings, Shop, Guide, Profile. Large icons with labels.
@@ -28,27 +29,40 @@ class _PilgrimShellState extends ConsumerState<PilgrimShell> {
     final t = l10n(context);
     final waiting = ref.watch(offlineQueueProvider).length;
     return Scaffold(
-      body: Column(children: [
-        if (waiting > 0)
-          Material(
-            color: Theme.of(context).colorScheme.secondaryContainer,
-            child: SafeArea(
-              bottom: false,
-              child: ListTile(dense: true, leading: const Icon(Icons.cloud_upload_outlined), title: Text(t.waitingToSend(waiting))),
+      body: Column(
+        children: [
+          if (waiting > 0)
+            Material(
+              color: Theme.of(context).colorScheme.secondaryContainer,
+              child: SafeArea(
+                bottom: false,
+                child: ListTile(dense: true, leading: const Icon(Icons.cloud_upload_rounded), title: Text(t.waitingToSend(waiting))),
+              ),
             ),
-          ),
-        Expanded(child: widget.shell),
-      ]),
-      bottomNavigationBar: NavigationBar(
-        selectedIndex: widget.shell.currentIndex,
-        onDestinationSelected: (i) => widget.shell.goBranch(i, initialLocation: i == widget.shell.currentIndex),
-        destinations: [
-          NavigationDestination(icon: const Icon(Icons.home_outlined), selectedIcon: const Icon(Icons.home), label: t.tabHome),
-          NavigationDestination(icon: const Icon(Icons.event_note_outlined), selectedIcon: const Icon(Icons.event_note), label: t.tabBookings),
-          NavigationDestination(icon: const Icon(Icons.card_giftcard_outlined), selectedIcon: const Icon(Icons.card_giftcard), label: t.tabShop),
-          NavigationDestination(icon: const Icon(Icons.explore_outlined), selectedIcon: const Icon(Icons.explore), label: t.tabGuide),
-          NavigationDestination(icon: const Icon(Icons.person_outline), selectedIcon: const Icon(Icons.person), label: t.tabProfile),
+          Expanded(child: widget.shell),
         ],
+      ),
+      // Flat bar, edge to edge, with a hairline on top (no floating box).
+      bottomNavigationBar: DecoratedBox(
+        decoration: const BoxDecoration(
+          border: Border(top: BorderSide(color: RafeeqColors.sand300)),
+        ),
+        child: NavigationBar(
+          labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
+          selectedIndex: widget.shell.currentIndex,
+          onDestinationSelected: (i) => widget.shell.goBranch(i, initialLocation: i == widget.shell.currentIndex),
+          destinations: [
+            NavigationDestination(icon: const Icon(Icons.home_outlined), selectedIcon: const Icon(Icons.home_rounded), label: t.tabHome),
+            NavigationDestination(
+              icon: const Icon(Icons.calendar_month_outlined),
+              selectedIcon: const Icon(Icons.calendar_month_rounded),
+              label: t.tabBookings,
+            ),
+            NavigationDestination(icon: const Icon(Icons.redeem_outlined), selectedIcon: const Icon(Icons.redeem_rounded), label: t.tabShop),
+            NavigationDestination(icon: const Icon(Icons.explore_outlined), selectedIcon: const Icon(Icons.explore_rounded), label: t.tabGuide),
+            NavigationDestination(icon: const Icon(Icons.person_outline_rounded), selectedIcon: const Icon(Icons.person_rounded), label: t.tabProfile),
+          ],
+        ),
       ),
     );
   }

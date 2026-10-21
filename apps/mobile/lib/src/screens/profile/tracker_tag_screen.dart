@@ -59,7 +59,7 @@ class _TrackerTagScreenState extends ConsumerState<TrackerTagScreen> {
         Text(t.tagPrivacy, style: Theme.of(context).textTheme.bodySmall),
         const SizedBox(height: 16),
         OutlinedButton.icon(
-          icon: const Icon(Icons.sell),
+          icon: const Icon(Icons.sell_rounded),
           label: Text(t.rentTag),
           onPressed: () => context.go('/home/services?category=accessibility'),
         ),

@@ -12,7 +12,7 @@ export function DeclineForm({ id }: { id: string }) {
   const [open, setOpen] = useState(false);
   if (!open) {
     return (
-      <button type="button" onClick={() => setOpen(true)} className="min-h-12 rounded-lg border border-red-700 px-4 text-red-700 hover:bg-red-50">
+      <button type="button" onClick={() => setOpen(true)} className="min-h-12 rounded-xl border border-clay-500/40 bg-white px-4 font-semibold text-clay-700 hover:bg-clay-100 hover:bg-clay-100">
         {t('decline')}
       </button>
     );

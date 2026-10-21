@@ -35,7 +35,7 @@ class ServiceScreen extends ConsumerWidget {
               Text(s['title'] as String, style: Theme.of(context).textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.w700)),
               const SizedBox(height: 8),
               Row(children: [
-                const Icon(Icons.verified, color: RafeeqColors.brand500),
+                const Icon(Icons.verified_rounded, color: RafeeqColors.brand500),
                 const SizedBox(width: 6),
                 Expanded(child: Text('${provider['name']} · ${t.verified}')),
               ]),

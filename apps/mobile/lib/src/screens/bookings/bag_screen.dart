@@ -35,7 +35,7 @@ class BagScreen extends ConsumerWidget {
               children: [
                 StaleBanner(cached: c),
                 Row(children: [
-                  const Icon(Icons.luggage, size: 40, color: RafeeqColors.brand700),
+                  const Icon(Icons.luggage_rounded, size: 40, color: RafeeqColors.brand700),
                   const SizedBox(width: 12),
                   Expanded(
                     child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -63,7 +63,7 @@ class BagScreen extends ConsumerWidget {
                 if (!openCase && !['delivered', 'found'].contains(b['status']))
                   OutlinedButton.icon(
                     style: OutlinedButton.styleFrom(foregroundColor: RafeeqColors.danger),
-                    icon: const Icon(Icons.report),
+                    icon: const Icon(Icons.report_rounded),
                     label: Text(t.reportMissing),
                     onPressed: () async {
                       try {
@@ -95,7 +95,7 @@ class _Step extends StatelessWidget {
     return IntrinsicHeight(
       child: Row(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
         Column(children: [
-          Icon(last ? Icons.radio_button_checked : Icons.check_circle, color: RafeeqColors.brand700, size: 28),
+          Icon(last ? Icons.radio_button_checked_rounded : Icons.check_circle_rounded, color: RafeeqColors.brand700, size: 28),
           if (!last) Expanded(child: Container(width: 3, color: RafeeqColors.brand100)),
         ]),
         const SizedBox(width: 12),

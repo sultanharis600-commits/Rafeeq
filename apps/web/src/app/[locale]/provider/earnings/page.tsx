@@ -21,9 +21,9 @@ export default async function EarningsPage({ params }: { params: Promise<{ local
     <>
       <PageHeader title={t('nav.earnings')} subtitle={free ? t('earnings.free', { date: day(e.commissionFreeUntil, locale) }) : t('earnings.rate', { rate: percent(e.commissionRateBps, locale) })} />
       <div className="mb-6 grid gap-4 sm:grid-cols-3">
-        <Stat label={t('earnings.pendingGross')} value={sar(e.pending.grossHalalas, locale)} hint={t('earnings.items', { n: e.pending.items })} />
-        <Stat label={t('earnings.pendingCommission')} value={sar(e.pending.commissionHalalas, locale)} />
-        <Stat label={t('earnings.pendingNet')} value={sar(e.pending.netHalalas, locale)} tone="good" hint={t('stats.nextPayout')} />
+        <Stat label={t('earnings.pendingGross')} icon="wallet" value={sar(e.pending.grossHalalas, locale)} hint={t('earnings.items', { n: e.pending.items })} />
+        <Stat label={t('earnings.pendingCommission')} icon="wallet" value={sar(e.pending.commissionHalalas, locale)} />
+        <Stat label={t('earnings.pendingNet')} icon="wallet" value={sar(e.pending.netHalalas, locale)} tone="good" hint={t('stats.nextPayout')} />
       </div>
       <Card title={t('earnings.payouts')}>
         <p className="mb-4 text-ink-600">{t('earnings.demoNote')}</p>

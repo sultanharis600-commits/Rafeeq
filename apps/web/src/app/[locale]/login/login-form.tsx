@@ -6,6 +6,7 @@ import { quickLogin, requestCode, verifyCode } from '@/app/actions/auth';
 import { ErrorText, SubmitButton } from '@/components/forms';
 import { inputCls } from '@/components/ui';
 
+/** Kept for /login, but dashboards no longer require this (see SKIP_LOGIN). */
 export function LoginForm({ locale, quick }: { locale: string; quick: boolean }) {
   return quick ? <QuickLoginForm locale={locale} /> : <CodeLoginForm locale={locale} />;
 }

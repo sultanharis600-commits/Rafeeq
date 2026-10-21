@@ -76,11 +76,11 @@ class _ServiceCard extends StatelessWidget {
             Text(s['title'] as String, style: Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w700)),
             const SizedBox(height: 4),
             Row(children: [
-              const Icon(Icons.verified, size: 18, color: RafeeqColors.brand500),
+              const Icon(Icons.verified_rounded, size: 18, color: RafeeqColors.brand500),
               const SizedBox(width: 4),
               Expanded(child: Text(provider['name'] as String, style: Theme.of(context).textTheme.bodySmall)),
               if (rating['average'] != null) ...[
-                const Icon(Icons.star, size: 18, color: RafeeqColors.gold500),
+                const Icon(Icons.star_rounded, size: 18, color: RafeeqColors.gold500),
                 Text(' ${rating['average']} (${rating['count']})'),
               ],
             ]),

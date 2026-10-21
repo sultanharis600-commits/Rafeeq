@@ -141,13 +141,13 @@ class _LostScreenState extends ConsumerState<LostScreen> {
             if (_stage == _Stage.locating) const Padding(padding: EdgeInsets.all(24), child: Center(child: CircularProgressIndicator())),
             const SizedBox(height: 16),
             if (_stage != _Stage.locating) ...[
-              _Advice(icon: Icons.accessibility_new, text: t.lostStay),
-              _Advice(icon: Icons.volume_up, text: t.lostShowStaff),
+              _Advice(icon: Icons.accessibility_new_rounded, text: t.lostStay),
+              _Advice(icon: Icons.volume_up_rounded, text: t.lostShowStaff),
               const SizedBox(height: 12),
               if (_fix != null)
                 Card(
                   child: ListTile(
-                    leading: const Icon(Icons.my_location, size: 32, color: RafeeqColors.brand700),
+                    leading: const Icon(Icons.my_location_rounded, size: 32, color: RafeeqColors.brand700),
                     title: Text(t.yourLocation),
                     subtitle: Text(
                       '${_fix!.lat.toStringAsFixed(5)}, ${_fix!.lng.toStringAsFixed(5)}'
@@ -159,7 +159,7 @@ class _LostScreenState extends ConsumerState<LostScreen> {
               const SizedBox(height: 12),
               FilledButton.icon(
                 style: FilledButton.styleFrom(backgroundColor: RafeeqColors.danger, minimumSize: const Size.fromHeight(64)),
-                icon: const Icon(Icons.sms, size: 28),
+                icon: const Icon(Icons.sms_rounded, size: 28),
                 label: Text(t.lostSendSms, style: const TextStyle(fontSize: 20)),
                 onPressed: _sendSms,
               ),
@@ -168,7 +168,7 @@ class _LostScreenState extends ConsumerState<LostScreen> {
                 Padding(
                   padding: const EdgeInsets.only(bottom: 8),
                   child: OutlinedButton.icon(
-                    icon: const Icon(Icons.call),
+                    icon: const Icon(Icons.call_rounded),
                     label: Text(t.callName(l['name'] as String)),
                     onPressed: () => launchUrl(Uri.parse('tel:${l['phone']}')),
                   ),
@@ -176,7 +176,7 @@ class _LostScreenState extends ConsumerState<LostScreen> {
               if (_group == null) Text(t.lostNoGroup, style: Theme.of(context).textTheme.bodySmall),
               const SizedBox(height: 8),
               OutlinedButton.icon(
-                icon: const Icon(Icons.support_agent),
+                icon: const Icon(Icons.support_agent_rounded),
                 label: Text(t.nearestLostAndFound),
                 onPressed: () => context.push('/map?type=lost_and_found'),
               ),

@@ -72,7 +72,7 @@ class _SetupScreenState extends ConsumerState<SetupScreen> {
             builder: (list) => Column(children: [
               for (final h in list)
                 ListTile(
-                  leading: Icon(_hotelId == h['id'] ? Icons.radio_button_checked : Icons.radio_button_unchecked),
+                  leading: Icon(_hotelId == h['id'] ? Icons.radio_button_checked_rounded : Icons.radio_button_unchecked_rounded),
                   selected: _hotelId == h['id'],
                   onTap: () => setState(() => _hotelId = h['id'] as String),
                   title: Text(h['name'] as String),
@@ -81,7 +81,7 @@ class _SetupScreenState extends ConsumerState<SetupScreen> {
           ),
           const SizedBox(height: 8),
           OutlinedButton.icon(
-            icon: const Icon(Icons.date_range),
+            icon: const Icon(Icons.date_range_rounded),
             label: Text(_dates == null ? t.travelDates : '${Fmt.day(_dates!.start, lang)} – ${Fmt.day(_dates!.end, lang)}'),
             onPressed: () async {
               final now = DateTime.now();

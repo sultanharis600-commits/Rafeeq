@@ -54,7 +54,7 @@ export default async function Payouts({ params }: { params: Promise<{ locale: st
                 {last.mismatches.length === 0 ? (
                   <p className="mt-2 text-brand-700">{t('recon.clean')}</p>
                 ) : (
-                  <ul className="mt-2 space-y-1 text-red-800">
+                  <ul className="mt-2 space-y-1 text-clay-700">
                     {last.mismatches.map((m, i) => <li key={i}>{m.kind} <span className="font-mono">{m.id.slice(0, 8)}</span>: {m.problem}</li>)}
                   </ul>
                 )}
